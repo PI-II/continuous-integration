@@ -51,7 +51,7 @@ public class CursoServiceImpTest {
 
 	@Test
 	public void debeRetornoUnCursoPorSuCodigoExistosamente() {
-		Curso curso = cursoService.getCurso("1");
+		Curso curso = cursoService.getCurso(1);
 		assertThat(curso).isNotNull();
 		assertThat(curso.getNombre()).isEqualTo("Matematicas");
 	}
@@ -60,7 +60,7 @@ public class CursoServiceImpTest {
 	public void debeRetornErrorSiElCursoNoExiste() {
 		
 		assertThatThrownBy(() -> {
-			 cursoService.getCurso("3");
+			 cursoService.getCurso(3);
 		}).isInstanceOf(DataNotFoundException.class);
 	}
 
