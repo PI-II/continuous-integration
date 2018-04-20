@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "perfil")
 public class Perfil {
@@ -24,6 +26,7 @@ public class Perfil {
 	private String nombre;
 	
 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "perfiles")
+	@JsonBackReference
 	private Set<Usuario> usuarios;
 	
 	public Perfil() {

@@ -27,13 +27,13 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 	
 	@RequestMapping("listar")
-	public @ResponseBody List<Usuario> getHeroes(){
+	public @ResponseBody List<Usuario> geUsuarios(){
 		return usuarioService.getUsuarios();		
 	}
 	
-	// @ResponseBody
-	@RequestMapping("consultarId")
-	public Usuario getUsuarioId(Integer id) throws DataNotFoundException{
+
+	@RequestMapping("consultarPorId")
+	public Usuario getUsuario(Integer id) throws DataNotFoundException{
 		log.debug("Entro a consultar");
 		Optional<Usuario> usuario = usuarioService.getUsuarioId(id);
 		if(!usuario.isPresent()) {
@@ -42,7 +42,7 @@ public class UsuarioController {
 		return usuario.get();
 	}
 	
-	@RequestMapping("consultarNombre")
+	@RequestMapping("consultarPorNombre")
 	public Usuario getUsuario(String nombre) throws DataNotFoundException{
 		log.debug("Entro a consultar");
 		Optional<Usuario> usuario = usuarioService.getUsuario(nombre);

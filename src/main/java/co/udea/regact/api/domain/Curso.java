@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "curso")
 public class Curso {
@@ -36,6 +38,7 @@ public class Curso {
 	private Boolean estado;
 	
 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "cursos")
+	@JsonBackReference
 	private Set<Usuario> usuarios;
 	
 	public Curso() {

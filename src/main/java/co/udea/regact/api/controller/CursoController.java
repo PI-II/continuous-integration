@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import co.udea.regact.api.domain.Curso;
 import co.udea.regact.api.domain.Usuario;
@@ -31,9 +30,9 @@ public class CursoController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-	// @ResponseBody
-	@GetMapping("/consultarActivosPorNombreUsuario")
-	public List<Curso> getCursosActivosNombre(String nombre) throws DataNotFoundException{
+
+	@GetMapping("/consultarCursosActivosPorNombreUsu")
+	public List<Curso> getCursosPorUsuario(String nombre) throws DataNotFoundException{
 		log.debug("Entro a consultar curso del usuario: "+ nombre);
 		Optional<Usuario> usuario = usuarioService.getUsuario(nombre);
 		if(!usuario.isPresent()) {
@@ -52,8 +51,8 @@ public class CursoController {
 		return cursosActivos;
 	}
 	
-	@GetMapping("/consultarActivosPorIdUsuario")
-	public List<Curso> getCursosActivos(Integer id) throws DataNotFoundException{
+	@GetMapping("/consultarCursosActivosPorIdUsu")
+	public List<Curso> getCursosPorUsuario(Integer id) throws DataNotFoundException{
 		log.debug("Entro a consultar curso del usuario: "+ id);
 		Optional<Usuario> usuario = usuarioService.getUsuarioId(id);
 		if(!usuario.isPresent()) {
