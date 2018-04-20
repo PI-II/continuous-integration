@@ -1,13 +1,15 @@
 package co.udea.regact.api.domain;
 
 
-//import java.time.LocalTime;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "grupo")
@@ -27,8 +29,9 @@ public class Grupo {
 	@Column(name = "gru_diaclase")
 	private String  diaclase;
 	
-//	@Column(name = "gru_horarioclase")
-//	private LocalTime  horarioclase;
+	@Column(name = "gru_horarioclase")
+	@Temporal(TemporalType.TIME)
+	private Date  horarioclase;
 	
 	@Column(name = "gru_estado")
 	private Boolean estado;
@@ -65,13 +68,13 @@ public class Grupo {
 		this.diaclase = diaclase;
 	}
 
-//	public LocalTime getHorarioclase() {
-//		return horarioclase;
-//	}
-//
-//	public void setHorarioclase(LocalTime horarioclase) {
-//		this.horarioclase = horarioclase;
-//	}
+	public Date getHorarioclase() {
+		return horarioclase;
+	}
+
+	public void setHorarioclase(Date horarioclase) {
+		this.horarioclase = horarioclase;
+	}
 
 	public Boolean getEstado() {
 		return estado;
