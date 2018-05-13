@@ -1,85 +1,72 @@
 package co.udea.regact.api.domain;
 
-import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "usuarios")
 public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "usu_id")
-	private Integer id;
+	private int id;
 	
-	@Column(name = "usu_nombre")
-	private String nombre;
-	
-	@Column(name = "usu_email")
+	@Column(name = "usu_email", unique = true)
 	private String email;
 	
 	@Column(name = "usu_password")
 	private String password;
 	
-	@Column(name = "usu_estado")
-	private Boolean estado;
+	@Column(name = "est_id")
+	private int idEstado;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "rel_usuario_curso_grupo", joinColumns = @JoinColumn(name = "usu_id", referencedColumnName = "usu_id"), inverseJoinColumns = @JoinColumn(name = "cur_id", referencedColumnName = "cur_id"))
-	@JsonManagedReference
-	private Set<Curso> cursos;
+	@Column(name = "per_id")
+	private int idPersona;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "rel_perfil_usuario", joinColumns = @JoinColumn(name = "usu_id", referencedColumnName = "usu_id"), inverseJoinColumns = @JoinColumn(name = "per_id", referencedColumnName = "per_id"))
-	@JsonManagedReference
-	private Set<Perfil> perfiles;
+	@OneToOne(fetch = FetchType.LAZY) 
+	@JoinColumn(name = "est_id", insertable = false, nullable = false, updatable = false)
+	private Estado estado;
 	
+	@OneToOne(fetch = FetchType.LAZY) 
+	@JoinColumn(name = "idPersona", insertable = false, nullable = false, updatable = false)
+	private Persona persona;
+	
+
 	public Usuario() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	public Usuario(String nombre,String email,String password,Boolean estado) {
-		this.nombre = nombre;
+	
+	
+	public Usuario(int id, String email, String password, int idEstado, int idPersona, Estado estado, Persona persona) {
+		super();
+		this.id = id;
 		this.email = email;
 		this.password = password;
+		this.idEstado = idEstado;
+		this.idPersona = idPersona;
 		this.estado = estado;
-	}
-	
-	public Usuario(String nombre,String email,String password,Boolean estado,Set<Curso> cursos,Set<Perfil> perfiles) {
-		this(nombre,email,password,estado);
-		this.cursos = cursos;
-		this.perfiles = perfiles;
+		this.persona = persona;
 	}
 
-	
-	public Integer getId() {
+
+
+	public int getId() {
 		return id;
 	}
-
-	public void setId(Integer id) {
+	
+	public void setId(int id) {
 		this.id = id;
 	}
-
-	
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	
 	public String getEmail() {
 		return email;
@@ -97,33 +84,21 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	
-	public Boolean getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
-
-	public void setEstado(Boolean estado) {
+	
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
-
 	
-	public Set<Curso> getCursos() {
-		return cursos;
+	public int getIdEstado() {
+		return idEstado;
 	}
-
 	
-	public void setCursos(Set<Curso> cursos) {
-		this.cursos = cursos;
-	}
-
-	
-	public Set<Perfil> getPerfiles() {
-		return perfiles;
-	}
-
-	public void setPerfiles(Set<Perfil> perfiles) {
-		this.perfiles = perfiles;
+	public void setIdEstado(int idEstado) {
+		this.idEstado = idEstado;
 	}
 
 }

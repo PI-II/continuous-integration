@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "perfil")
-public class Perfil {
+@Table(name="permisos")
+public class Permiso {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,15 +19,19 @@ public class Perfil {
 	@Column(name = "per_nombre")
 	private String nombre;
 	
-	public Perfil() {
-		
-	}
+	@Column(name = "per_descripcion")
+	private String descripcion;
 	
-	public Perfil(String nombre) {
-		this.nombre = nombre;
+	public Permiso() {
+		// TODO Auto-generated constructor stub
 	}
 
-	
+	public Permiso(String nombre, String descripcion) {
+		super();
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -36,13 +40,20 @@ public class Perfil {
 		this.id = id;
 	}
 
-	
 	public String getNombre() {
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 }

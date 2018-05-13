@@ -28,13 +28,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public Optional<Usuario> getUsuarioId(Integer id) {
-		return usuarioRepository.findByid(id);
-	}
-
-	@Override
-	public Optional<Usuario> getUsuario(String nombre) {
-		return usuarioRepository.findBynombre(nombre);
+	public Optional<Usuario> getUsuarioId(String userId) {
+		// TODO Auto-generated method stub
+		return usuarioRepository.findByEmail(userId);
 	}
 
 }

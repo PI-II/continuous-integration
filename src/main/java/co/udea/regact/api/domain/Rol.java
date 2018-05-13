@@ -8,39 +8,40 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "perfil")
-public class Perfil {
+@Table(name="ROLES")
+public class Rol {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "per_id")
-	private Integer id;
+	@Column(name="rol_id")
+	private int id;
 	
-	@Column(name = "per_nombre")
+	@Column(name="rol_nombre")
 	private String nombre;
 	
-	public Perfil() {
-		
+	public Rol() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	public Perfil(String nombre) {
+	
+	public Rol(String nombre) {
+		super();
 		this.nombre = nombre;
 	}
 
-	
-	public Integer getId() {
+
+	public int getId() {
 		return id;
 	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	
 	public String getNombre() {
 		return nombre;
 	}
-
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}

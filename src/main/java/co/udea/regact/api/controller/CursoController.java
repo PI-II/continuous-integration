@@ -31,8 +31,8 @@ public class CursoController {
 	private UsuarioService usuarioService;
 
 
-	@GetMapping("/consultarCursosActivosPorNombreUsu")
-	public List<Curso> getCursosPorUsuario(String nombre) throws DataNotFoundException{
+	@GetMapping("/consultarCursosActivosPorDocente")
+	public List<Curso> getCursosPorUsuario(String userId) throws DataNotFoundException{
 		log.debug("Entro a consultar curso del usuario: "+ nombre);
 		Optional<Usuario> usuario = usuarioService.getUsuario(nombre);
 		if(!usuario.isPresent()) {
@@ -41,14 +41,14 @@ public class CursoController {
 		
 		//Predicado que pregunta por los cursos no activos
 		Predicate<Curso> cursoP = p -> p.getEstado() == false;
-		Set<Curso> cursos = usuario.get().getCursos();
+//		Set<Curso> cursos = usuario.get().getCursos();
 		
-		// Elimina todos los cursos no son activos 
-		cursos.removeIf(cursoP);
+//		// Elimina todos los cursos no son activos 
+//		cursos.removeIf(cursoP);
+//		
+//		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
 		
-		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
-		
-		return cursosActivos;
+		return null;
 	}
 	
 	@GetMapping("/consultarCursosActivosPorIdUsu")
@@ -61,14 +61,14 @@ public class CursoController {
 		
 		//Predicado que pregunta por los cursos no activos
 		Predicate<Curso> cursoP = p -> p.getEstado() == false;
-		Set<Curso> cursos = usuario.get().getCursos();
+//		Set<Curso> cursos = usuario.get().getCursos();
 		
 		// Elimina todos los cursos que no son activos 
-		cursos.removeIf(cursoP);
+//		cursos.removeIf(cursoP);
 		
-		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
+//		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
 		
-		return cursosActivos;
+		return null;
 	}
 	
 	
