@@ -47,7 +47,8 @@ public class Usuario {
 	private Estado estado;
 	
 	@OneToOne(fetch = FetchType.LAZY) 
-	@JoinColumn(name = "idPersona", insertable = false, nullable = false, updatable = false)
+	@JoinColumn(name = "per_id", referencedColumnName = "per_id", 
+				insertable = false, nullable = false, updatable = false)
 	private Persona persona;
 	
 

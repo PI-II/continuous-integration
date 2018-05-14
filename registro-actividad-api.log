@@ -16010,3 +16010,182 @@ Caused by: org.hibernate.AnnotationException: Unknown mappedBy in: co.udea.regac
 2018-05-13 22:33:38.495  INFO 24475 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
 2018-05-13 22:33:38.499  INFO 24475 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2018-05-13 22:33:38.506  INFO 24475 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-13 22:49:53.872  INFO 25166 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on oxypora with PID 25166 (/home/orvie/git/regact-api/target/classes started by orvie in /home/orvie/git/regact-api)
+2018-05-13 22:49:53.875  INFO 25166 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-13 22:49:53.933  INFO 25166 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b9a4292: startup date [Sun May 13 22:49:53 COT 2018]; root of context hierarchy
+2018-05-13 22:49:55.357  INFO 25166 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-13 22:49:55.546  INFO 25166 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ae0bf703] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-13 22:49:56.037  INFO 25166 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-13 22:49:56.049  INFO 25166 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-13 22:49:56.050  INFO 25166 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-05-13 22:49:56.162  INFO 25166 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-05-13 22:49:56.162  INFO 25166 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2233 ms
+2018-05-13 22:49:56.331  INFO 25166 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-13 22:49:56.336  INFO 25166 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-13 22:49:56.337  INFO 25166 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-13 22:49:56.337  INFO 25166 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-13 22:49:56.337  INFO 25166 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-13 22:49:56.338  INFO 25166 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-05-13 22:49:56.856  INFO 25166 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-13 22:49:56.870  INFO 25166 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-13 22:49:56.936  INFO 25166 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-13 22:49:56.938  INFO 25166 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-13 22:49:56.939  INFO 25166 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-13 22:49:56.984  INFO 25166 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-13 22:49:57.095  INFO 25166 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-05-13 22:49:57.253  INFO 25166 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-05-13 22:49:57.255  INFO 25166 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@71adfedd
+2018-05-13 22:49:57.447  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.450  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.451  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.451  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.452  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.452  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.452  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.453  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.454  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.454  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.455  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.455  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.455  WARN 25166 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:49:57.954  INFO 25166 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-13 22:49:57.971  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: actividades
+2018-05-13 22:49:57.974  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: actividades
+2018-05-13 22:49:58.108  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: agentes
+2018-05-13 22:49:58.112  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: agentes
+2018-05-13 22:49:58.220  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: cursos
+2018-05-13 22:49:58.225  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: cursos
+2018-05-13 22:49:58.297  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: docentes
+2018-05-13 22:49:58.300  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: docentes
+2018-05-13 22:49:58.421  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: estados
+2018-05-13 22:49:58.426  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: estados
+2018-05-13 22:49:58.520  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: grupos
+2018-05-13 22:49:58.525  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: grupos
+2018-05-13 22:49:58.622  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: perfiles
+2018-05-13 22:49:58.627  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: perfiles
+2018-05-13 22:49:58.689  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: permisos
+2018-05-13 22:49:58.695  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: permisos
+2018-05-13 22:49:58.811  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: personas
+2018-05-13 22:49:58.818  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: personas
+2018-05-13 22:49:58.922  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: reporte_actividades
+2018-05-13 22:49:58.926  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: reporte_actividades
+2018-05-13 22:49:58.989  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: roles
+2018-05-13 22:49:58.993  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: roles
+2018-05-13 22:49:59.066  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: semestres
+2018-05-13 22:49:59.069  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: semestres
+2018-05-13 22:49:59.133  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: semestresxgrupos
+2018-05-13 22:49:59.139  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: semestresxgrupos
+2018-05-13 22:49:59.155  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: usuarios
+2018-05-13 22:49:59.159  INFO 25166 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: usuarios
+2018-05-13 22:50:00.060  INFO 25166 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-13 22:50:00.845  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorIdUsu],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:50:00.847  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorDocente],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:50:00.850  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/listar]}" onto public java.util.List<co.udea.regact.api.domain.Usuario> co.udea.regact.api.controller.UsuarioController.geUsuarios()
+2018-05-13 22:50:00.850  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorId]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:50:00.851  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorNombre]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:50:00.856  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-05-13 22:50:00.857  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-05-13 22:50:00.858  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-05-13 22:50:00.862  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-13 22:50:00.863  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-13 22:50:01.018  INFO 25166 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-05-13 22:50:01.306  INFO 25166 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b9a4292: startup date [Sun May 13 22:49:53 COT 2018]; root of context hierarchy
+2018-05-13 22:50:01.359  INFO 25166 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-13 22:50:01.359  INFO 25166 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-13 22:50:01.402  INFO 25166 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-13 22:50:01.739  INFO 25166 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-13 22:50:01.751  INFO 25166 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-05-13 22:50:01.751  INFO 25166 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-05-13 22:50:01.767  INFO 25166 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-05-13 22:50:01.802  INFO 25166 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-05-13 22:50:02.042  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCursosPorUsuarioUsingGET_1
+2018-05-13 22:50:02.097  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingGET_1
+2018-05-13 22:50:02.100  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingHEAD_1
+2018-05-13 22:50:02.103  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPOST_1
+2018-05-13 22:50:02.106  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPUT_1
+2018-05-13 22:50:02.109  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPATCH_1
+2018-05-13 22:50:02.111  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingDELETE_1
+2018-05-13 22:50:02.114  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingOPTIONS_1
+2018-05-13 22:50:02.116  INFO 25166 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingTRACE_1
+2018-05-13 22:50:02.172  INFO 25166 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-13 22:50:02.179  INFO 25166 --- [main] .u.r.a.RegistroActividadesApiApplication : Started RegistroActividadesApiApplication in 8.778 seconds (JVM running for 9.485)
+2018-05-13 22:52:23.984  INFO 25166 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-05-13 22:52:23.984  INFO 25166 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b9a4292: startup date [Sun May 13 22:49:53 COT 2018]; root of context hierarchy
+2018-05-13 22:52:23.987  INFO 25166 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-05-13 22:52:23.989  INFO 25166 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-05-13 22:52:23.996  INFO 25166 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-13 22:52:51.135  INFO 25298 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on oxypora with PID 25298 (/home/orvie/git/regact-api/target/classes started by orvie in /home/orvie/git/regact-api)
+2018-05-13 22:52:51.139  INFO 25298 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-13 22:52:51.210  INFO 25298 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b9a4292: startup date [Sun May 13 22:52:51 COT 2018]; root of context hierarchy
+2018-05-13 22:52:52.643  INFO 25298 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-13 22:52:52.821  INFO 25298 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$12a864cc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-13 22:52:53.344  INFO 25298 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-13 22:52:53.358  INFO 25298 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-13 22:52:53.360  INFO 25298 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-05-13 22:52:53.473  INFO 25298 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-05-13 22:52:53.474  INFO 25298 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2268 ms
+2018-05-13 22:52:53.650  INFO 25298 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-13 22:52:53.654  INFO 25298 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-13 22:52:53.655  INFO 25298 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-13 22:52:53.655  INFO 25298 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-13 22:52:53.655  INFO 25298 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-13 22:52:53.656  INFO 25298 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-05-13 22:52:54.175  INFO 25298 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-13 22:52:54.190  INFO 25298 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-13 22:52:54.260  INFO 25298 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-13 22:52:54.262  INFO 25298 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-13 22:52:54.264  INFO 25298 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-13 22:52:54.314  INFO 25298 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-13 22:52:54.425  INFO 25298 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-05-13 22:52:54.594  INFO 25298 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-05-13 22:52:54.597  INFO 25298 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7ec95456
+2018-05-13 22:52:54.796  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.799  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.800  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.800  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.800  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.801  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.801  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.802  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.802  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.803  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.803  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.803  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:54.803  WARN 25298 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-13 22:52:55.337  INFO 25298 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2018-05-13 22:52:56.145  INFO 25298 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-13 22:52:56.890  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorIdUsu],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:52:56.892  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/consultarCursosActivosPorDocente],methods=[GET]}" onto public java.util.List<co.udea.regact.api.domain.Curso> co.udea.regact.api.controller.CursoController.getCursosPorUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:52:56.894  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/listar]}" onto public java.util.List<co.udea.regact.api.domain.Usuario> co.udea.regact.api.controller.UsuarioController.geUsuarios()
+2018-05-13 22:52:56.895  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorId]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.Integer) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:52:56.895  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorNombre]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuario(java.lang.String) throws co.udea.regact.api.exception.DataNotFoundException
+2018-05-13 22:52:56.900  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-05-13 22:52:56.901  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-05-13 22:52:56.902  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-05-13 22:52:56.906  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-13 22:52:56.907  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-13 22:52:57.073  INFO 25298 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-05-13 22:52:57.371  INFO 25298 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7b9a4292: startup date [Sun May 13 22:52:51 COT 2018]; root of context hierarchy
+2018-05-13 22:52:57.424  INFO 25298 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-13 22:52:57.425  INFO 25298 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-13 22:52:57.467  INFO 25298 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-13 22:52:57.767  INFO 25298 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-13 22:52:57.779  INFO 25298 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-05-13 22:52:57.779  INFO 25298 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-05-13 22:52:57.795  INFO 25298 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-05-13 22:52:57.831  INFO 25298 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-05-13 22:52:58.117  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getCursosPorUsuarioUsingGET_1
+2018-05-13 22:52:58.187  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingGET_1
+2018-05-13 22:52:58.191  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingHEAD_1
+2018-05-13 22:52:58.195  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPOST_1
+2018-05-13 22:52:58.199  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPUT_1
+2018-05-13 22:52:58.202  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingPATCH_1
+2018-05-13 22:52:58.205  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingDELETE_1
+2018-05-13 22:52:58.208  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingOPTIONS_1
+2018-05-13 22:52:58.211  INFO 25298 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getUsuarioUsingTRACE_1
+2018-05-13 22:52:58.269  INFO 25298 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-13 22:52:58.277  INFO 25298 --- [main] .u.r.a.RegistroActividadesApiApplication : Started RegistroActividadesApiApplication in 7.583 seconds (JVM running for 8.178)
