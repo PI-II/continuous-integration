@@ -21,9 +21,12 @@ public class GrupoServiceImpl implements GrupoService{
 	}
 
 	@Override
-	public List<Grupo> getGruposPorDocente(Integer idDocente) {
+	public List<Grupo> getGruposByEstado(Integer idEstado) {
 		// TODO Auto-generated method stub
-		return grupoRepository.findByDocente(idDocente);
+		return null;
 	}
+
+
+
 
 }

@@ -6,6 +6,6 @@ import co.udea.regact.api.domain.Grupo;
 
 public interface GrupoService {
 	
-	public List<Grupo> getGruposPorDocente(Integer idDocente);
+	public List<Grupo> getGruposByEstado(Integer idEstado);
 	
 }

@@ -121,5 +121,13 @@ public class Semestre {
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
 	}
+	
+	public Estado getEstado() {
+		return estado;
+	}
+	
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
 
 }

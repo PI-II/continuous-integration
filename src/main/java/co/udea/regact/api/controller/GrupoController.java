@@ -28,10 +28,5 @@ public class GrupoController {
 	@Qualifier("GrupoServiceImpl")
 	private GrupoService grupoService;
 	
-	
-	
-	@RequestMapping(value = "consultarpordocente", method = RequestMethod.GET)
-	public @ResponseBody List<Grupo> getGruposDocente(int idDocente){
-		return grupoService.getGruposPorDocente(idDocente);		
-	}
+
 }
