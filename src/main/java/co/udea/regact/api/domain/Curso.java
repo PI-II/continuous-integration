@@ -8,7 +8,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,11 +25,19 @@ public class Curso {
 	@Column(name = "cur_nombre")
 	private String nombre;
 	
-	@Column(name = "cur_estado")
-	private Boolean estado;
+	@Column(name = "est_id")
+	private int idEstado;
 	
-	@Column(name = "cur_horas")
-	private int horas;
+	@Column(name = "cur_hteoricas")
+	private int horasTeoricas;
+	
+	@Column(name = "cur_hpracticas")
+	private int horasPracticas;
+	
+	@OneToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "est_id", referencedColumnName = "est_id",
+				nullable = false, insertable = false, updatable = false)
+	private Estado estado;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cur_id", targetEntity = Grupo.class)
 	private Set<Grupo> grupos;
@@ -35,12 +45,14 @@ public class Curso {
 	public Curso() {
 		
 	}
-	
-	public Curso(String nombre, Boolean estado, int horas) {
+
+	public Curso(Integer id, String nombre, int idEstado, int horasTeoricas, int horasPracticas) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
-		this.estado = estado;
-		this.horas = horas;
+		this.idEstado = idEstado;
+		this.horasTeoricas = horasTeoricas;
+		this.horasPracticas = horasPracticas;
 	}
 
 
@@ -62,21 +74,49 @@ public class Curso {
 		this.nombre = nombre;
 	}
 
-	
-	public int getCantidadHoras() {
-		return horas;
+	public int getIdEstado() {
+		return idEstado;
 	}
 
-	public void setCantidadHoras(int cantidadHoras) {
-		this.horas = cantidadHoras;
+
+	public void setIdEstado(int idEstado) {
+		this.idEstado = idEstado;
 	}
-	
-	public Boolean getEstado() {
+
+	public Estado getEstado() {
 		return estado;
 	}
 
-	public void setEstado(Boolean estado) {
+
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+
+
+	public Set<Grupo> getGrupos() {
+		return grupos;
+	}
+
+
+	public void setGrupos(Set<Grupo> grupos) {
+		this.grupos = grupos;
+	}
+
+	public int getHorasTeoricas() {
+		return horasTeoricas;
+	}
+
+	public void setHorasTeoricas(int horasTeoricas) {
+		this.horasTeoricas = horasTeoricas;
+	}
+
+	public int getHorasPracticas() {
+		return horasPracticas;
+	}
+
+	public void setHorasPracticas(int horasPracticas) {
+		this.horasPracticas = horasPracticas;
+	}
+
 
 }

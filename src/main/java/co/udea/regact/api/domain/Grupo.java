@@ -26,15 +26,19 @@ public class Grupo {
 	@Column(name = "gru_nombre")
 	private String nombre;
 	
-	@Column(name = "gru_cantidadestudiantes")
-	private int cantidadestudiantes;
+	@Column(name = "gru_cant_estudiantes")
+	private int cantidadEstudiantes;
 	
-	@Column(name = "gru_diaclase")
+	@Column(name = "gru_diasclase")
 	private String  diaclase;
 	
-	@Column(name = "gru_horarioclase")
+	@Column(name = "gru_horainicial")
 	@Temporal(TemporalType.TIME)
-	private Date  horarioclase;
+	private Date  horainicial;
+	
+	@Column(name = "gru_horafinal")
+	@Temporal(TemporalType.TIME)
+	private Date  horafinal;
 	
 	@Column(name = "est_id")
 	private int idEstado;
@@ -59,25 +63,30 @@ public class Grupo {
 	@JoinColumn(name = "est_id", referencedColumnName = "est_id",
 				nullable = false, insertable = false, updatable = false)
 	private Estado estado;
-
 	
 	public Grupo() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	public Grupo(String nombre, int cantidadestudiantes, String diaclase, Date horarioclase, int idEstado,
-			Integer cur_id, Date fechaInicio, Date fechaFin) {
+
+
+	public Grupo(Integer id, String nombre, int cantidadEstudiantes, String diaclase, Date horainicial, Date horafinal,
+			int idEstado, Integer cur_id, Date fechaInicio, Date fechaFin, Curso curso, Estado estado) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
-		this.cantidadestudiantes = cantidadestudiantes;
+		this.cantidadEstudiantes = cantidadEstudiantes;
 		this.diaclase = diaclase;
-		this.horarioclase = horarioclase;
+		this.horainicial = horainicial;
+		this.horafinal = horafinal;
 		this.idEstado = idEstado;
 		this.cur_id = cur_id;
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
+		this.curso = curso;
+		this.estado = estado;
 	}
+
 
 
 	public Integer getId() {
@@ -97,11 +106,11 @@ public class Grupo {
 	}
 
 	public int getCantidadestudiantes() {
-		return cantidadestudiantes;
+		return cantidadEstudiantes;
 	}
 
 	public void setCantidadestudiantes(int cantidadestudiantes) {
-		this.cantidadestudiantes = cantidadestudiantes;
+		this.cantidadEstudiantes = cantidadestudiantes;
 	}
 
 	public String getDiaclase() {
@@ -110,14 +119,6 @@ public class Grupo {
 
 	public void setDiaclase(String diaclase) {
 		this.diaclase = diaclase;
-	}
-
-	public Date getHorarioclase() {
-		return horarioclase;
-	}
-
-	public void setHorarioclase(Date horarioclase) {
-		this.horarioclase = horarioclase;
 	}
 
 	public Integer getCur_id() {
@@ -163,4 +164,47 @@ public class Grupo {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+
+
+
+	public int getCantidadEstudiantes() {
+		return cantidadEstudiantes;
+	}
+
+
+
+	public void setCantidadEstudiantes(int cantidadEstudiantes) {
+		this.cantidadEstudiantes = cantidadEstudiantes;
+	}
+
+
+
+	public Date getHorainicial() {
+		return horainicial;
+	}
+
+
+
+	public void setHorainicial(Date horainicial) {
+		this.horainicial = horainicial;
+	}
+
+
+
+	public Date getHorafinal() {
+		return horafinal;
+	}
+
+
+
+	public void setHorafinal(Date horafinal) {
+		this.horafinal = horafinal;
+	}
+
+
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+	
 }

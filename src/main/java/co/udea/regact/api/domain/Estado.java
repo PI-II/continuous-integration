@@ -40,6 +40,9 @@ public class Estado {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEstado", targetEntity = Semestre.class)
 	private Set<Semestre> semestres;
 	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEstado", targetEntity = Curso.class)
+	private Set<Curso> cursos;
+	
 	
 	public Estado() {
 		// TODO Auto-generated constructor stub

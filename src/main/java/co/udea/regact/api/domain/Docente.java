@@ -1,11 +1,15 @@
 package co.udea.regact.api.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -35,8 +39,8 @@ public class Docente {
 				nullable = false, insertable = false, updatable = false)
 	private Persona persona;
 	
-	
-	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "docente")
+	private List<GrupoDocenteAsociacion> gruposDocentes;
 	
 	
 	public Docente() {

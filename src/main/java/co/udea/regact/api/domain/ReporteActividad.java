@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -66,6 +67,17 @@ public class ReporteActividad {
 	private Semestre semestre;
 	
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumns({ 
+					@JoinColumn(name = "doce_id", referencedColumnName = "id_docente",
+							insertable = false, updatable = false, nullable = false),
+					@JoinColumn(name = "gru_id", referencedColumnName = "id_grupo",
+							insertable = false, updatable = false, nullable = false),
+					@JoinColumn(name = "sem_id", referencedColumnName = "id_semestre",
+							insertable = false, updatable = false, nullable = false)
+	})
+	private GrupoDocenteAsociacion gruposDocentes;
+	
 
 	public ReporteActividad() {
 		// TODO Auto-generated constructor stub
@@ -111,7 +123,7 @@ public class ReporteActividad {
 		return idActividad;
 	}
 
-	public void setId_actividad(int idActividad) {
+	public void setIdActividad(int idActividad) {
 		this.idActividad = idActividad;
 	}
 

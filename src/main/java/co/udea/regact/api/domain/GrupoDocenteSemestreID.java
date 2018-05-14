@@ -22,6 +22,15 @@ public class GrupoDocenteSemestreID implements Serializable {
 	
 	
 	
+	public GrupoDocenteSemestreID(int idGrupo, int idDocente, int idSemestre) {
+		super();
+		this.idGrupo = idGrupo;
+		this.idDocente = idDocente;
+		this.idSemestre = idSemestre;
+	}
+
+
+
 	public int getIdGrupo() {
 		return idGrupo;
 	}
