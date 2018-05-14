@@ -1,12 +1,16 @@
 package co.udea.regact.api.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +40,14 @@ public class Semestre {
 	@Column(name = "est_id")
 	private int idEstado;
 	
+	
+	@ManyToMany
+	@JoinTable(
+			name="semestresxgrupos",
+			joinColumns=@JoinColumn(name="sem_id", referencedColumnName="sem_id"),
+			inverseJoinColumns=@JoinColumn(name="gru_id", referencedColumnName="gru_id")
+			)
+	private List<Grupo> grupos;
 	
 	public Semestre() {
 		// TODO Auto-generated constructor stub
@@ -89,6 +101,14 @@ public class Semestre {
 
 	public int getIdEstado() {
 		return idEstado;
+	}
+	
+	public List<Grupo> getGrupos() {
+		return grupos;
+	}
+	
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
 	}
 
 }

@@ -16,17 +16,23 @@ public class Actividad {
 	@Column(name="act_id")
 	private int id;
 	
-	@Column(name="act_descripcion")
+	@Column(name="act_nombre")
 	private String nombre;
+	
+	@Column(name="act_descripcion")
+	private String descripcion;
 	
 	public Actividad() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Actividad(String nombre) {
+
+	public Actividad(int id, String nombre, String descripcion) {
 		super();
+		this.id = id;
 		this.nombre = nombre;
+		this.descripcion = descripcion;
 	}
+
 
 
 	public String getNombre() {
@@ -40,5 +46,13 @@ public class Actividad {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}	
+	
+	public String getDescripcion() {
+		return descripcion;
+	}
+	
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 	
 }

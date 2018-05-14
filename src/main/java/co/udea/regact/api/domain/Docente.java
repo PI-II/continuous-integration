@@ -32,8 +32,6 @@ public class Docente {
 	private int idPersona;
 	
 	
-	private List<Grupo> grupos;
-	
 	
 	
 	
