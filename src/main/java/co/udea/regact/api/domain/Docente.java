@@ -1,8 +1,5 @@
 package co.udea.regact.api.domain;
 
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

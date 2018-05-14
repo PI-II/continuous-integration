@@ -8,26 +8,28 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "perfil")
+@Table(name = "perfiles")
 public class Perfil {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "per_id")
+	@Column(name = "pil_id")
 	private Integer id;
 	
-	@Column(name = "per_nombre")
+	@Column(name = "pil_nombre")
 	private String nombre;
 	
 	public Perfil() {
 		
 	}
 	
-	public Perfil(String nombre) {
+	public Perfil(Integer id, String nombre) {
+		super();
+		this.id = id;
 		this.nombre = nombre;
 	}
 
-	
+
 	public Integer getId() {
 		return id;
 	}

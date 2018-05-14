@@ -29,11 +29,16 @@ public class Estado {
 	@Column(name = "ate_id")
 	private int idAgente;
 	
+	
+	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEstado", targetEntity = Grupo.class)
 	private Set<Grupo> grupos;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEstado", targetEntity = Usuario.class)
 	private Set<Usuario> usuarios;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idEstado", targetEntity = Semestre.class)
+	private Set<Semestre> semestres;
 	
 	
 	public Estado() {

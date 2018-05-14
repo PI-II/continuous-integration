@@ -5,16 +5,20 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "SEMESTRES")
+@Table(name = "semestres")
 public class Semestre {
 	
 	@Id
@@ -26,9 +30,11 @@ public class Semestre {
 	private String nombre;
 	
 	@Column(name = "sem_fechainicio")
+	@Temporal(TemporalType.DATE)
 	private Date fechaInicio;
 	
 	@Column(name = "sem_fechafin")
+	@Temporal(TemporalType.DATE)
 	private Date fechaFinal;
 	
 	@Column(name = "sem_ano")
@@ -39,6 +45,11 @@ public class Semestre {
 
 	@Column(name = "est_id")
 	private int idEstado;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "est_id", referencedColumnName = "est_id", 
+				nullable = false, insertable = false, updatable = false)
+	private Estado estado;
 	
 	
 	@ManyToMany

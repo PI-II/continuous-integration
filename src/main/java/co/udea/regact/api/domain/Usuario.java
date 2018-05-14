@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -32,8 +33,17 @@ public class Usuario {
 	@Column(name = "per_id")
 	private int idPersona;
 	
+	@Column(name = "pil_id")
+	private int idPerfil;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "pil_id", referencedColumnName = "pil_id",
+				insertable = false, nullable = false, updatable = false)
+	private Perfil perfil;
+	
 	@OneToOne(fetch = FetchType.LAZY) 
-	@JoinColumn(name = "est_id", insertable = false, nullable = false, updatable = false)
+	@JoinColumn(name = "est_id", referencedColumnName = "est_id",
+				insertable = false, nullable = false, updatable = false)
 	private Estado estado;
 	
 	@OneToOne(fetch = FetchType.LAZY) 
@@ -99,6 +109,14 @@ public class Usuario {
 	
 	public void setIdEstado(int idEstado) {
 		this.idEstado = idEstado;
+	}
+	
+	public int getIdPerfil() {
+		return idPerfil;
+	}
+	
+	public void setIdPerfil(int idPerfil) {
+		this.idPerfil = idPerfil;
 	}
 
 }
