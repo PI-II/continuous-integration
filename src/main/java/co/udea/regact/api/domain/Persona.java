@@ -26,8 +26,8 @@ public class Persona {
 	
 	@Column(name = "per_email")
 	private String email;
-	
-	@OneToOne(optional = true, fetch = FetchType.LAZY, mappedBy = "idPersona", targetEntity = Docente.class) 
+
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "persona")
 	private Docente docente;
 	
 	
@@ -77,12 +77,5 @@ public class Persona {
 		this.identificacion = identificacion;
 	}
 	
-	public Docente getDocente() {
-		return docente;
-	}
-	
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
 
 }

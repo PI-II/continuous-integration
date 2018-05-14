@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,6 +32,11 @@ public class Docente {
 	
 	@Column(name="per_id")
 	private int idPersona;
+	
+	@OneToOne
+	@JoinColumn(name = "per_id", referencedColumnName = "per_id",
+				nullable = false, insertable = false, updatable = false)
+	private Persona persona;
 	
 	
 	

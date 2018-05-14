@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,20 +20,20 @@ public class ReporteActividad {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "repo_id")
+	@Column(name = "rep_id")
 	private long id;
 	
 	@Column(name = "doce_id")
-	private int id_docente;
+	private int idDocente;
 	
 	@Column(name = "gru_id")
-	private int id_grupo;
+	private int idGrupo;
 	
 	@Column(name = "sem_id")
-	private int id_semestre;
+	private int idSemestre;
 	
 	@Column(name = "act_id")
-	private int id_actividad;
+	private int idActividad;
 	
 	@Column(name = "rep_fecha")
 	@Temporal(value=TemporalType.DATE)
@@ -42,53 +45,74 @@ public class ReporteActividad {
 	@Column(name = "rep_observaciones")
 	private String observaciones;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "act_id", referencedColumnName = "act_id",  
+				insertable = false, updatable = false, nullable = false)
+	private Actividad actividad;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "doce_id", referencedColumnName = "doce_id",  
+				insertable = false, updatable = false, nullable = false)
+	private Docente docente;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "gru_id", referencedColumnName = "gru_id",  
+				insertable = false, updatable = false, nullable = false)	
+	private Grupo grupo;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "sem_id", referencedColumnName = "sem_id",  
+				insertable = false, updatable = false, nullable = false)	
+	private Semestre semestre;
+	
+	
 
 	public ReporteActividad() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ReporteActividad(int id_docente, int id_grupo, int id_semestre, int id_actividad, Date fecha_reporte,
+	public ReporteActividad(int id_docente, int idGrupo, int idSemestre, int idActividad, Date fecha_reporte,
 			int horas, String observaciones) {
 		super();
-		this.id_docente = id_docente;
-		this.id_grupo = id_grupo;
-		this.id_semestre = id_semestre;
-		this.id_actividad = id_actividad;
+		this.idDocente = id_docente;
+		this.idGrupo = idGrupo;
+		this.idSemestre = idSemestre;
+		this.idActividad = idActividad;
 		this.fecha_reporte = fecha_reporte;
 		this.horas = horas;
 		this.observaciones = observaciones;
 	}
 
-	public int getId_docente() {
-		return id_docente;
+	public int getIdDocente() {
+		return idDocente;
 	}
 
-	public void setId_docente(int id_docente) {
-		this.id_docente = id_docente;
+	public void setId_docente(int idDocente) {
+		this.idDocente = idDocente;
 	}
 
-	public int getId_grupo() {
-		return id_grupo;
+	public int getIdGrupo() {
+		return idGrupo;
 	}
 
-	public void setId_grupo(int id_grupo) {
-		this.id_grupo = id_grupo;
+	public void setId_grupo(int idGrupo) {
+		this.idGrupo = idGrupo;
 	}
 
-	public int getId_semestre() {
-		return id_semestre;
+	public int getIdSemestre() {
+		return idSemestre;
 	}
 
 	public void setId_semestre(int id_semestre) {
-		this.id_semestre = id_semestre;
+		this.idSemestre = id_semestre;
 	}
 
-	public int getId_actividad() {
-		return id_actividad;
+	public int getIdActividad() {
+		return idActividad;
 	}
 
-	public void setId_actividad(int id_actividad) {
-		this.id_actividad = id_actividad;
+	public void setId_actividad(int idActividad) {
+		this.idActividad = idActividad;
 	}
 
 	public Date getFecha_reporte() {
@@ -115,6 +139,24 @@ public class ReporteActividad {
 		this.observaciones = observaciones;
 	}
 	
+	public Actividad getActividad() {
+		return actividad;
+	}
 	
+	public void setActividad(Actividad actividad) {
+		this.actividad = actividad;
+	}
+	
+	public Docente getDocente() {
+		return docente;
+	}
+	
+	public void setDocente(Docente docente) {
+		this.docente = docente;
+	}
+	
+	public Grupo getGrupo() {
+		return grupo;
+	}
 
 }
