@@ -31,45 +31,46 @@ public class CursoController {
 	private UsuarioService usuarioService;
 
 
-	@GetMapping("/consultarCursosActivosPorDocente")
-	public List<Curso> getCursosPorUsuario(String userId) throws DataNotFoundException{
-		log.debug("Entro a consultar curso del usuario: "+ nombre);
-		Optional<Usuario> usuario = usuarioService.getUsuario(nombre);
-		if(!usuario.isPresent()) {
-			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario"));
-		}
-		
-		//Predicado que pregunta por los cursos no activos
-		Predicate<Curso> cursoP = p -> p.getEstado() == false;
-//		Set<Curso> cursos = usuario.get().getCursos();
-		
-//		// Elimina todos los cursos no son activos 
-//		cursos.removeIf(cursoP);
+//	@GetMapping("/consultarCursosActivosPorDocente")
+//	public List<Curso> getCursosPorUsuario(String userId) throws DataNotFoundException{
+//		log.debug("Entro a consultar curso del usuario: "+ userId);
+//		Optional<Usuario> usuario = usuarioService.getUsuarioId(userId);
+//		if(!usuario.isPresent()) {
+//			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario"));
+//		}
 //		
-//		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
-		
-		return null;
-	}
+//		usuario.get().getPersona().getDocente()
+//		//Predicado que pregunta por los cursos no activos
+//		Predicate<Curso> cursoP = p -> p.getEstado() == false;
+////		Set<Curso> cursos = usuario.get().getCursos();
+//		
+////		// Elimina todos los cursos no son activos 
+////		cursos.removeIf(cursoP);
+////		
+////		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
+//		
+//		return null;
+//	}
 	
-	@GetMapping("/consultarCursosActivosPorIdUsu")
-	public List<Curso> getCursosPorUsuario(Integer id) throws DataNotFoundException{
-		log.debug("Entro a consultar curso del usuario: "+ id);
-		Optional<Usuario> usuario = usuarioService.getUsuarioId(id);
-		if(!usuario.isPresent()) {
-			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario"));
-		}
-		
-		//Predicado que pregunta por los cursos no activos
-		Predicate<Curso> cursoP = p -> p.getEstado() == false;
-//		Set<Curso> cursos = usuario.get().getCursos();
-		
-		// Elimina todos los cursos que no son activos 
-//		cursos.removeIf(cursoP);
-		
-//		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
-		
-		return null;
-	}
+//	@GetMapping("/consultarCursosActivosPorIdUsu")
+//	public List<Curso> getCursosPorUsuario(Integer id) throws DataNotFoundException{
+//		log.debug("Entro a consultar curso del usuario: "+ id);
+//		Optional<Usuario> usuario = usuarioService.getUsuarioId(id);
+//		if(!usuario.isPresent()) {
+//			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario"));
+//		}
+//		
+//		//Predicado que pregunta por los cursos no activos
+//		Predicate<Curso> cursoP = p -> p.getEstado() == false;
+////		Set<Curso> cursos = usuario.get().getCursos();
+//		
+//		// Elimina todos los cursos que no son activos 
+////		cursos.removeIf(cursoP);
+//		
+////		List<Curso> cursosActivos = new ArrayList<Curso>(cursos);
+//		
+//		return null;
+//	}
 	
 	
 	

@@ -77,5 +77,13 @@ public class Persona {
 		this.identificacion = identificacion;
 	}
 	
+	public Docente getDocente() {
+		return docente;
+	}
+	
+	public void setDocente(Docente docente) {
+		this.docente = docente;
+	}
+	
 
 }

@@ -33,23 +33,13 @@ public class UsuarioController {
 	
 
 	@RequestMapping("consultarPorId")
-	public Usuario getUsuario(Integer id) throws DataNotFoundException{
+	public Usuario getUsuario(String userId) throws DataNotFoundException{
 		log.debug("Entro a consultar");
-		Optional<Usuario> usuario = usuarioService.getUsuarioId(id);
+		Optional<Usuario> usuario = usuarioService.getUsuarioId(userId);
 		if(!usuario.isPresent()) {
 			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario"));
 		}
 		return usuario.get();
 	}
 	
-	@RequestMapping("consultarPorNombre")
-	public Usuario getUsuario(String nombre) throws DataNotFoundException{
-		log.debug("Entro a consultar");
-		Optional<Usuario> usuario = usuarioService.getUsuario(nombre);
-		if(!usuario.isPresent()) {
-			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario by name"));
-		}
-		return usuario.get();
-	}
-
 }

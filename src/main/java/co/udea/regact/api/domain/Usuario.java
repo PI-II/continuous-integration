@@ -119,5 +119,13 @@ public class Usuario {
 	public void setIdPerfil(int idPerfil) {
 		this.idPerfil = idPerfil;
 	}
+	
+	public Persona getPersona() {
+		return persona;
+	}
+	
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
 
 }
