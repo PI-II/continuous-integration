@@ -23,7 +23,7 @@ public class GrupoDocenteServiceImpl implements GrupoDocenteService {
 	}
 
 	@Override
-	public Optional<GrupoDocenteAsociacion> getGruposByDocente(Integer idDocente) {
+	public List<GrupoDocenteAsociacion> getGruposByDocente(Integer idDocente) {
 		// TODO Auto-generated method stub
 		return repository.getGruposByIdDocente(idDocente);
 	}

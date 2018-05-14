@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.udea.regact.api.domain.Grupo;
@@ -30,11 +31,11 @@ public class GrupoDocenteController {
 	private GrupoDocenteService grupoDocenteService;
 	
 
-	@RequestMapping("activos")
-	public List<Grupo> getGruposActivos(Integer idDocente) throws DataNotFoundException{
+	@RequestMapping(value = "activos", method = RequestMethod.GET)
+	public List<Grupo> getGruposActivos(int idDocente) throws DataNotFoundException{
 		log.debug("Entro a consultar");
 		
-		Optional<GrupoDocenteAsociacion> grupos = grupoDocenteService.getGruposByDocente(idDocente);
+		List<GrupoDocenteAsociacion> grupos = grupoDocenteService.getGruposByDocente(idDocente);
 		//Predicate<T>
 		List<Grupo> gruposL = null;
 			

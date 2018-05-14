@@ -1,11 +1,11 @@
 package co.udea.regact.api.service;
 
-import java.util.Optional;
+import java.util.List;
 
 import co.udea.regact.api.domain.GrupoDocenteAsociacion;
 
 public interface GrupoDocenteService {
 	
-	public Optional<GrupoDocenteAsociacion> getGruposByDocente(Integer idDocente);
+	public List<GrupoDocenteAsociacion> getGruposByDocente(Integer idDocente);
 
 }
