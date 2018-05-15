@@ -14141,3 +14141,10 @@ Verify the connector's configuration, identify and stop any process that's liste
 2018-04-20 10:12:49.350  INFO 8424 --- [main] .u.r.a.RegistroActividadesApiApplication : Started RegistroActividadesApiApplication in 39.676 seconds (JVM running for 40.233)
 2018-04-20 10:18:27.899  INFO 8424 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2018-04-20 10:18:27.903  INFO 8424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-04-20 10:18:27.919  INFO 8424 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2018-04-20 10:18:28.117  INFO 8424 --- [http-nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-04-20 13:40:13.771  INFO 8424 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-04-20 13:40:13.774  INFO 8424 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74e52303: startup date [Fri Apr 20 10:12:09 COT 2018]; root of context hierarchy
+2018-04-20 13:40:13.789  INFO 8424 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-04-20 13:40:13.800  INFO 8424 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-04-20 13:40:13.804  INFO 8424 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
