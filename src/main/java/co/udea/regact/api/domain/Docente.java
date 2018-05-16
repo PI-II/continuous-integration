@@ -1,101 +1,110 @@
 package co.udea.regact.api.domain;
 
+import java.io.Serializable;
+import javax.persistence.*;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "docentes")
-public class Docente {
-	
+@Table(name="\"DOCENTES\"")
+public class Docente implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "doce_id")
-	private int id;
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="doce_id")
+	private Integer doceId;
+
 	@Column(name="doce_departamento")
-	private String departamento;
-	
-	@Column(name="doce_titulo")
-	private String titulo;
-	
+	private String doceDepartamento;
+
 	@Column(name="doce_experiencia")
-	private int experiencia;
-	
-	@Column(name="per_id")
-	private int idPersona;
-	
-	@OneToOne
-	@JoinColumn(name = "per_id", referencedColumnName = "per_id",
-				nullable = false, insertable = false, updatable = false)
-	private Persona persona;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "docente")
-	private List<GrupoDocenteAsociacion> gruposDocentes;
-	
-	
+	private Integer doceExperiencia;
+
+	@Column(name="doce_titulo")
+	private String doceTitulo;
+
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="doce_id")
+	private Usuario usuario;
+
+	@ManyToMany(mappedBy="docentes")
+	private List<Grupo> grupos;
+
+	@OneToMany(mappedBy="docente")
+	private List<ReporteActividad> reporteActividades;
+
 	public Docente() {
-		// TODO Auto-generated constructor stub
-	}
-	
-
-	public Docente(int id, String departamento, String titulo, int experiencia, int idPersona) {
-		super();
-		this.id = id;
-		this.departamento = departamento;
-		this.titulo = titulo;
-		this.experiencia = experiencia;
-		this.idPersona = idPersona;
 	}
 
-
-	public int getId() {
-		return id;
+	public Integer getDoceId() {
+		return this.doceId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setDoceId(Integer doceId) {
+		this.doceId = doceId;
 	}
 
-	public String getDepartamento() {
-		return departamento;
+	public String getDoceDepartamento() {
+		return this.doceDepartamento;
 	}
 
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
+	public void setDoceDepartamento(String doceDepartamento) {
+		this.doceDepartamento = doceDepartamento;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public Integer getDoceExperiencia() {
+		return this.doceExperiencia;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setDoceExperiencia(Integer doceExperiencia) {
+		this.doceExperiencia = doceExperiencia;
 	}
 
-	public int getExperiencia() {
-		return experiencia;
+	public String getDoceTitulo() {
+		return this.doceTitulo;
 	}
 
-	public void setExperiencia(int experiencia) {
-		this.experiencia = experiencia;
+	public void setDoceTitulo(String doceTitulo) {
+		this.doceTitulo = doceTitulo;
 	}
 
-	public int getIdPersona() {
-		return idPersona;
+	public Usuario getUsuario() {
+		return this.usuario;
 	}
-	
-	public void setIdPersona(int idPersona) {
-		this.idPersona = idPersona;
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
-	
+
+	public List<Grupo> getGrupos() {
+		return this.grupos;
+	}
+
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
+	}
+
+	public List<ReporteActividad> getReporteActividades() {
+		return this.reporteActividades;
+	}
+
+	public void setReporteActividades(List<ReporteActividad> reporteActividades) {
+		this.reporteActividades = reporteActividades;
+	}
+
+	public ReporteActividad addReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().add(reporteActividade);
+		reporteActividade.setDocente(this);
+
+		return reporteActividade;
+	}
+
+	public ReporteActividad removeReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().remove(reporteActividade);
+		reporteActividade.setDocente(null);
+
+		return reporteActividade;
+	}
+
 }

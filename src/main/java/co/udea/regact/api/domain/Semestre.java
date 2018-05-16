@@ -1,133 +1,133 @@
 package co.udea.regact.api.domain;
 
+import java.io.Serializable;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "semestres")
-public class Semestre {
-	
-	@Id
-	@Column(name = "sem_id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	
-	@Column(name = "sem_nombre")
-	private String nombre;
-	
-	@Column(name = "sem_fechainicio")
-	@Temporal(TemporalType.DATE)
-	private Date fechaInicio;
-	
-	@Column(name = "sem_fechafin")
-	@Temporal(TemporalType.DATE)
-	private Date fechaFinal;
-	
-	@Column(name = "sem_ano")
-	private int agnio;
-	
-	@Column(name = "sem_semestre")
-	private int semestre;
+@Table(name="\"SEMESTRES\"")
+public class Semestre implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-	@Column(name = "est_id")
-	private int idEstado;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "est_id", referencedColumnName = "est_id", 
-				nullable = false, insertable = false, updatable = false)
-	private Estado estado;
-	
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="sem_id")
+	private Integer semId;
+
+	@Column(name="sem_ano")
+	private Integer semAno;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="sem_fechafin")
+	private Date semFechafin;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="sem_fechainicio")
+	private Date semFechainicio;
+
+	@Column(name="sem_semestre")
+	private Boolean semSemestre;
+
+	@OneToMany(mappedBy="semestre")
+	private List<ReporteActividad> reporteActividades;
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="est_id")
+	private EstadosSemestre estadosSemestre;
+
 	@ManyToMany
 	@JoinTable(
-			name="semestresxgrupos",
-			joinColumns=@JoinColumn(name="sem_id", referencedColumnName="sem_id"),
-			inverseJoinColumns=@JoinColumn(name="gru_id", referencedColumnName="gru_id")
-			)
+		name="\"SEMESTRESXGRUPOS\""
+		, joinColumns={
+			@JoinColumn(name="sem_id")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="gru_id")
+			}
+		)
 	private List<Grupo> grupos;
-	
+
 	public Semestre() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	
-	public Semestre(String nombre, Date fechaInicio, Date fechaFinal, int agnio, int semestre, int idEstado) {
-		super();
-		this.nombre = nombre;
-		this.fechaInicio = fechaInicio;
-		this.fechaFinal = fechaFinal;
-		this.agnio = agnio;
-		this.semestre = semestre;
-		this.idEstado = idEstado;
 	}
 
-
-
-	public Integer getId() {
-		return id;
+	public Integer getSemId() {
+		return this.semId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setSemId(Integer semId) {
+		this.semId = semId;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public Integer getSemAno() {
+		return this.semAno;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setSemAno(Integer semAno) {
+		this.semAno = semAno;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	public Date getSemFechafin() {
+		return this.semFechafin;
 	}
 
-	public Date getFechaFinal() {
-		return fechaFinal;
+	public void setSemFechafin(Date semFechafin) {
+		this.semFechafin = semFechafin;
 	}
 
-	public int getAgnio() {
-		return agnio;
+	public Date getSemFechainicio() {
+		return this.semFechainicio;
 	}
 
-	public int getSemestre() {
-		return semestre;
+	public void setSemFechainicio(Date semFechainicio) {
+		this.semFechainicio = semFechainicio;
 	}
 
-	public int getIdEstado() {
-		return idEstado;
+	public Boolean getSemSemestre() {
+		return this.semSemestre;
 	}
-	
+
+	public void setSemSemestre(Boolean semSemestre) {
+		this.semSemestre = semSemestre;
+	}
+
+	public List<ReporteActividad> getReporteActividades() {
+		return this.reporteActividades;
+	}
+
+	public void setReporteActividades(List<ReporteActividad> reporteActividades) {
+		this.reporteActividades = reporteActividades;
+	}
+
+	public ReporteActividad addReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().add(reporteActividade);
+		reporteActividade.setSemestre(this);
+
+		return reporteActividade;
+	}
+
+	public ReporteActividad removeReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().remove(reporteActividade);
+		reporteActividade.setSemestre(null);
+
+		return reporteActividade;
+	}
+
+	public EstadosSemestre getEstadosSemestre() {
+		return this.estadosSemestre;
+	}
+
+	public void setEstadosSemestre(EstadosSemestre estadosSemestre) {
+		this.estadosSemestre = estadosSemestre;
+	}
+
 	public List<Grupo> getGrupos() {
-		return grupos;
+		return this.grupos;
 	}
-	
+
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
-	}
-	
-	public Estado getEstado() {
-		return estado;
-	}
-	
-	public void setEstado(Estado estado) {
-		this.estado = estado;
 	}
 
 }

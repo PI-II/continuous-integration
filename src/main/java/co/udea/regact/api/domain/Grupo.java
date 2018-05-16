@@ -1,210 +1,178 @@
 package co.udea.regact.api.domain;
 
-
+import java.io.Serializable;
+import javax.persistence.*;
+import java.sql.Time;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import java.util.List;
+
 
 @Entity
-@Table(name = "grupos")
-public class Grupo {
-	
+@Table(name="\"GRUPOS\"")
+public class Grupo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "gru_id")
-	private Integer id;
-	
-	@Column(name = "gru_nombre")
-	private String nombre;
-	
-	@Column(name = "gru_cant_estudiantes")
-	private int cantidadEstudiantes;
-	
-	@Column(name = "gru_diasclase")
-	private String  diaclase;
-	
-	@Column(name = "gru_horainicial")
-	@Temporal(TemporalType.TIME)
-	private Date  horainicial;
-	
-	@Column(name = "gru_horafinal")
-	@Temporal(TemporalType.TIME)
-	private Date  horafinal;
-	
-	@Column(name = "est_id")
-	private int idEstado;
-	
-	@Column(name = "cur_id")
-	private Integer cur_id;
-	
-	@Column(name = "gru_fechainicio")
-	@Temporal(TemporalType.TIME)
-	private Date fechaInicio;
-	
-	@Column(name = "gru_fechafin")
-	@Temporal(TemporalType.TIME)
-	private Date fechaFin;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "cur_id", referencedColumnName = "cur_id",
-				nullable = false, insertable = false, updatable = false)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="gru_id")
+	private Integer gruId;
+
+	@Column(name="gru_cantidadestudiantes")
+	private Integer gruCantidadestudiantes;
+
+	@Column(name="gru_diaclase")
+	private String gruDiaclase;
+
+	@Column(name="gru_estado")
+	private Boolean gruEstado;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="gru_fechafin")
+	private Date gruFechafin;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="gru_fechainicio")
+	private Date gruFechainicio;
+
+	@Column(name="gru_horarioclase")
+	private Time gruHorarioclase;
+
+	@Column(name="gru_nombre")
+	private String gruNombre;
+
+	@ManyToMany
+	@JoinTable(
+		name="\"DOCENTESXGRUPOS\""
+		, joinColumns={
+			@JoinColumn(name="gru_id")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="doce_id")
+			}
+		)
+	private List<Docente> docentes;
+
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="cur_id")
 	private Curso curso;
 
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "est_id", referencedColumnName = "est_id",
-				nullable = false, insertable = false, updatable = false)
-	private Estado estado;
-	
+	@OneToMany(mappedBy="grupo")
+	private List<ReporteActividad> reporteActividades;
+
+	@ManyToMany(mappedBy="grupos")
+	private List<Semestre> semestres;
+
 	public Grupo() {
-		// TODO Auto-generated constructor stub
-	}
-	
-
-
-	public Grupo(Integer id, String nombre, int cantidadEstudiantes, String diaclase, Date horainicial, Date horafinal,
-			int idEstado, Integer cur_id, Date fechaInicio, Date fechaFin, Curso curso, Estado estado) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.cantidadEstudiantes = cantidadEstudiantes;
-		this.diaclase = diaclase;
-		this.horainicial = horainicial;
-		this.horafinal = horafinal;
-		this.idEstado = idEstado;
-		this.cur_id = cur_id;
-		this.fechaInicio = fechaInicio;
-		this.fechaFin = fechaFin;
-		this.curso = curso;
-		this.estado = estado;
 	}
 
-
-
-	public Integer getId() {
-		return id;
+	public Integer getGruId() {
+		return this.gruId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setGruId(Integer gruId) {
+		this.gruId = gruId;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public Integer getGruCantidadestudiantes() {
+		return this.gruCantidadestudiantes;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setGruCantidadestudiantes(Integer gruCantidadestudiantes) {
+		this.gruCantidadestudiantes = gruCantidadestudiantes;
 	}
 
-	public int getCantidadestudiantes() {
-		return cantidadEstudiantes;
+	public String getGruDiaclase() {
+		return this.gruDiaclase;
 	}
 
-	public void setCantidadestudiantes(int cantidadestudiantes) {
-		this.cantidadEstudiantes = cantidadestudiantes;
+	public void setGruDiaclase(String gruDiaclase) {
+		this.gruDiaclase = gruDiaclase;
 	}
 
-	public String getDiaclase() {
-		return diaclase;
+	public Boolean getGruEstado() {
+		return this.gruEstado;
 	}
 
-	public void setDiaclase(String diaclase) {
-		this.diaclase = diaclase;
+	public void setGruEstado(Boolean gruEstado) {
+		this.gruEstado = gruEstado;
 	}
 
-	public Integer getCur_id() {
-		return cur_id;
+	public Date getGruFechafin() {
+		return this.gruFechafin;
 	}
 
-	public void setCur_id(Integer cur_id) {
-		this.cur_id = cur_id;
+	public void setGruFechafin(Date gruFechafin) {
+		this.gruFechafin = gruFechafin;
 	}
 
-	public Date getFechaInicio() {
-		return fechaInicio;
+	public Date getGruFechainicio() {
+		return this.gruFechainicio;
 	}
 
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	public void setGruFechainicio(Date gruFechainicio) {
+		this.gruFechainicio = gruFechainicio;
 	}
 
-	public Date getFechaFin() {
-		return fechaFin;
+	public Time getGruHorarioclase() {
+		return this.gruHorarioclase;
 	}
 
-	public void setFechaFin(Date fechaFin) {
-		this.fechaFin = fechaFin;
+	public void setGruHorarioclase(Time gruHorarioclase) {
+		this.gruHorarioclase = gruHorarioclase;
 	}
-	
+
+	public String getGruNombre() {
+		return this.gruNombre;
+	}
+
+	public void setGruNombre(String gruNombre) {
+		this.gruNombre = gruNombre;
+	}
+
+	public List<Docente> getDocentes() {
+		return this.docentes;
+	}
+
+	public void setDocentes(List<Docente> docentes) {
+		this.docentes = docentes;
+	}
+
 	public Curso getCurso() {
-		return curso;
+		return this.curso;
 	}
-	
-	public Estado getEstado() {
-		return estado;
-	}
-	
-	public int getIdEstado() {
-		return idEstado;
-	}
-	
-	public void setIdEstado(int idEstado) {
-		this.idEstado = idEstado;
-	}
-	
-	public void setEstado(Estado estado) {
-		this.estado = estado;
-	}
-
-
-
-	public int getCantidadEstudiantes() {
-		return cantidadEstudiantes;
-	}
-
-
-
-	public void setCantidadEstudiantes(int cantidadEstudiantes) {
-		this.cantidadEstudiantes = cantidadEstudiantes;
-	}
-
-
-
-	public Date getHorainicial() {
-		return horainicial;
-	}
-
-
-
-	public void setHorainicial(Date horainicial) {
-		this.horainicial = horainicial;
-	}
-
-
-
-	public Date getHorafinal() {
-		return horafinal;
-	}
-
-
-
-	public void setHorafinal(Date horafinal) {
-		this.horafinal = horafinal;
-	}
-
-
 
 	public void setCurso(Curso curso) {
 		this.curso = curso;
 	}
-	
+
+	public List<ReporteActividad> getReporteActividades() {
+		return this.reporteActividades;
+	}
+
+	public void setReporteActividades(List<ReporteActividad> reporteActividades) {
+		this.reporteActividades = reporteActividades;
+	}
+
+	public ReporteActividad addReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().add(reporteActividade);
+		reporteActividade.setGrupo(this);
+
+		return reporteActividade;
+	}
+
+	public ReporteActividad removeReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().remove(reporteActividade);
+		reporteActividade.setGrupo(null);
+
+		return reporteActividade;
+	}
+
+	public List<Semestre> getSemestres() {
+		return this.semestres;
+	}
+
+	public void setSemestres(List<Semestre> semestres) {
+		this.semestres = semestres;
+	}
+
 }

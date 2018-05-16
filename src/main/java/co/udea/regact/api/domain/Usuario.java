@@ -1,131 +1,83 @@
 package co.udea.regact.api.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
-@Table(name = "usuarios")
-public class Usuario {
-	
+@Table(name="\"USUARIOS\"")
+public class Usuario implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "usu_id")
-	private int id;
-	
-	@Column(name = "usu_email", unique = true)
-	private String email;
-	
-	@Column(name = "usu_password")
-	private String password;
-	
-	@Column(name = "est_id")
-	private int idEstado;
-	
-	@Column(name = "per_id")
-	private int idPersona;
-	
-	@Column(name = "pil_id")
-	private int idPerfil;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "pil_id", referencedColumnName = "pil_id",
-				insertable = false, nullable = false, updatable = false)
-	private Perfil perfil;
-	
-	@OneToOne(fetch = FetchType.LAZY) 
-	@JoinColumn(name = "est_id", referencedColumnName = "est_id",
-				insertable = false, nullable = false, updatable = false)
-	private Estado estado;
-	
-	@OneToOne(fetch = FetchType.LAZY) 
-	@JoinColumn(name = "per_id", referencedColumnName = "per_id", 
-				insertable = false, nullable = false, updatable = false)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="usu_id")
+	private Integer usuId;
+
+	@Column(name="usu_password")
+	private String usuPassword;
+
+	@OneToOne(mappedBy="usuario", fetch=FetchType.LAZY)
+	private Docente docente;
+
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="usu_id")
 	private Persona persona;
-	
+
+	@ManyToMany
+	@JoinTable(
+		name="\"USUARIOSXROLES\""
+		, joinColumns={
+			@JoinColumn(name="usu_id")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="rol_id")
+			}
+		)
+	private List<Rol> roles;
 
 	public Usuario() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	
-	public Usuario(int id, String email, String password, int idEstado, int idPersona, Estado estado, Persona persona) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.password = password;
-		this.idEstado = idEstado;
-		this.idPersona = idPersona;
-		this.estado = estado;
-		this.persona = persona;
 	}
 
-
-
-	public int getId() {
-		return id;
-	}
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public String getEmail() {
-		return email;
+	public Integer getUsuId() {
+		return this.usuId;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsuId(Integer usuId) {
+		this.usuId = usuId;
 	}
 
-	
-	public String getPassword() {
-		return password;
+	public String getUsuPassword() {
+		return this.usuPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUsuPassword(String usuPassword) {
+		this.usuPassword = usuPassword;
 	}
-	
-	public Estado getEstado() {
-		return estado;
+
+	public Docente getDocente() {
+		return this.docente;
 	}
-	
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+
+	public void setDocente(Docente docente) {
+		this.docente = docente;
 	}
-	
-	public int getIdEstado() {
-		return idEstado;
-	}
-	
-	public void setIdEstado(int idEstado) {
-		this.idEstado = idEstado;
-	}
-	
-	public int getIdPerfil() {
-		return idPerfil;
-	}
-	
-	public void setIdPerfil(int idPerfil) {
-		this.idPerfil = idPerfil;
-	}
-	
+
 	public Persona getPersona() {
-		return persona;
+		return this.persona;
 	}
-	
+
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public List<Rol> getRoles() {
+		return this.roles;
+	}
+
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
 	}
 
 }

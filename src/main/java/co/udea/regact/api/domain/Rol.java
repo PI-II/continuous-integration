@@ -1,49 +1,52 @@
 package co.udea.regact.api.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
+
 
 @Entity
-@Table(name="ROLES")
-public class Rol {
-	
+@Table(name="\"ROLES\"")
+public class Rol implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="rol_id")
-	private int id;
-	
+	private Integer rolId;
+
 	@Column(name="rol_nombre")
-	private String nombre;
-	
+	private String rolNombre;
+
+	@ManyToMany(mappedBy="roles")
+	private List<Usuario> usuarios;
+
 	public Rol() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	
-	public Rol(String nombre) {
-		super();
-		this.nombre = nombre;
 	}
 
+	public Integer getRolId() {
+		return this.rolId;
+	}
 
-	public int getId() {
-		return id;
+	public void setRolId(Integer rolId) {
+		this.rolId = rolId;
 	}
-	
-	public String getNombre() {
-		return nombre;
+
+	public String getRolNombre() {
+		return this.rolNombre;
 	}
-	
-	public void setId(int id) {
-		this.id = id;
+
+	public void setRolNombre(String rolNombre) {
+		this.rolNombre = rolNombre;
 	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 }

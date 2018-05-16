@@ -1,122 +1,88 @@
-	package co.udea.regact.api.domain;
+package co.udea.regact.api.domain;
 
-import java.util.Set;
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "cursos")
-public class Curso {
-	
+@Table(name="\"CURSOS\"")
+public class Curso implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "cur_id")
-	private Integer id;
-	
-	@Column(name = "cur_nombre")
-	private String nombre;
-	
-	@Column(name = "est_id")
-	private int idEstado;
-	
-	@Column(name = "cur_hteoricas")
-	private int horasTeoricas;
-	
-	@Column(name = "cur_hpracticas")
-	private int horasPracticas;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "est_id", referencedColumnName = "est_id",
-				nullable = false, insertable = false, updatable = false)
-	private Estado estado;
-	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cur_id", targetEntity = Grupo.class)
-	private Set<Grupo> grupos;
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="cur_id")
+	private Integer curId;
+
+	@Column(name="cur_estado")
+	private Boolean curEstado;
+
+	@Column(name="cur_horas")
+	private Integer curHoras;
+
+	@Column(name="cur_nombre")
+	private String curNombre;
+
+	//bi-directional many-to-one association to Grupo
+	@OneToMany(mappedBy="curso")
+	private List<Grupo> grupos;
+
 	public Curso() {
-		
 	}
 
-	public Curso(Integer id, String nombre, int idEstado, int horasTeoricas, int horasPracticas) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.idEstado = idEstado;
-		this.horasTeoricas = horasTeoricas;
-		this.horasPracticas = horasPracticas;
+	public Integer getCurId() {
+		return this.curId;
 	}
 
-
-
-	public Integer getId() {
-		return id;
+	public void setCurId(Integer curId) {
+		this.curId = curId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public Boolean getCurEstado() {
+		return this.curEstado;
 	}
 
-	
-	public String getNombre() {
-		return nombre;
+	public void setCurEstado(Boolean curEstado) {
+		this.curEstado = curEstado;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public Integer getCurHoras() {
+		return this.curHoras;
 	}
 
-	public int getIdEstado() {
-		return idEstado;
+	public void setCurHoras(Integer curHoras) {
+		this.curHoras = curHoras;
 	}
 
-
-	public void setIdEstado(int idEstado) {
-		this.idEstado = idEstado;
+	public String getCurNombre() {
+		return this.curNombre;
 	}
 
-	public Estado getEstado() {
-		return estado;
+	public void setCurNombre(String curNombre) {
+		this.curNombre = curNombre;
 	}
 
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public List<Grupo> getGrupos() {
+		return this.grupos;
 	}
 
-
-	public Set<Grupo> getGrupos() {
-		return grupos;
-	}
-
-
-	public void setGrupos(Set<Grupo> grupos) {
+	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
 	}
 
-	public int getHorasTeoricas() {
-		return horasTeoricas;
+	public Grupo addGrupo(Grupo grupo) {
+		getGrupos().add(grupo);
+		grupo.setCurso(this);
+
+		return grupo;
 	}
 
-	public void setHorasTeoricas(int horasTeoricas) {
-		this.horasTeoricas = horasTeoricas;
-	}
+	public Grupo removeGrupo(Grupo grupo) {
+		getGrupos().remove(grupo);
+		grupo.setCurso(null);
 
-	public int getHorasPracticas() {
-		return horasPracticas;
+		return grupo;
 	}
-
-	public void setHorasPracticas(int horasPracticas) {
-		this.horasPracticas = horasPracticas;
-	}
-
 
 }

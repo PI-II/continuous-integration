@@ -1,58 +1,65 @@
 package co.udea.regact.api.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
-@Table(name="ACTIVIDADES")
-public class Actividad {
+@Table(name="\"ACTIVIDADES\"")
+public class Actividad implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="act_id")
-	private int id;
-	
-	@Column(name="act_nombre")
-	private String nombre;
-	
+	private Integer actId;
+
 	@Column(name="act_descripcion")
-	private String descripcion;
-	
+	private String actDescripcion;
+
+	@OneToMany(mappedBy="actividade")
+	private List<ReporteActividad> reporteActividades;
+
 	public Actividad() {
-		// TODO Auto-generated constructor stub
 	}
 
-	public Actividad(int id, String nombre, String descripcion) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
+	public Integer getActId() {
+		return this.actId;
 	}
 
+	public void setActId(Integer actId) {
+		this.actId = actId;
+	}
 
+	public String getActDescripcion() {
+		return this.actDescripcion;
+	}
 
-	public String getNombre() {
-		return nombre;
+	public void setActDescripcion(String actDescripcion) {
+		this.actDescripcion = actDescripcion;
 	}
-	
-	public int getId() {
-		return id;
+
+	public List<ReporteActividad> getReporteActividades() {
+		return this.reporteActividades;
 	}
-	
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}	
-	
-	public String getDescripcion() {
-		return descripcion;
+
+	public void setReporteActividades(List<ReporteActividad> reporteActividades) {
+		this.reporteActividades = reporteActividades;
 	}
-	
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+
+	public ReporteActividad addReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().add(reporteActividade);
+		reporteActividade.setActividade(this);
+
+		return reporteActividade;
 	}
-	
+
+	public ReporteActividad removeReporteActividade(ReporteActividad reporteActividade) {
+		getReporteActividades().remove(reporteActividade);
+		reporteActividade.setActividade(null);
+
+		return reporteActividade;
+	}
+
 }

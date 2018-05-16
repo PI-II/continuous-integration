@@ -1,89 +1,72 @@
 package co.udea.regact.api.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.*;
+
 
 @Entity
-@Table(name="personas")
-public class Persona {
-	
+@Table(name="\"PERSONAS\"")
+public class Persona implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "per_id")
-	private Integer id;
-	
-	@Column(name = "per_identificacion")
-	private String identificacion;
-	
-	@Column(name = "per_nombre")
-	private String nombre;
-	
-	@Column(name = "per_email")
-	private String email;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="per_id")
+	private Integer perId;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "persona", targetEntity = Docente.class)
-	private Docente docente;
-	
-	
+	@Column(name="per_email")
+	private String perEmail;
+
+	@Column(name="per_estado")
+	private Boolean perEstado;
+
+	@Column(name="per_nombre")
+	private String perNombre;
+
+	@OneToOne(mappedBy="persona", fetch=FetchType.LAZY)
+	private Usuario usuario;
+
 	public Persona() {
-		// TODO Auto-generated constructor stub
 	}
 
-
-	public Persona(Integer id, String identificacion, String nombre, String email) {
-		super();
-		this.id = id;
-		this.identificacion = identificacion;
-		this.nombre = nombre;
-		this.email = email;
+	public Integer getPerId() {
+		return this.perId;
 	}
 
-
-	public Integer getId() {
-		return id;
+	public void setPerId(Integer perId) {
+		this.perId = perId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public String getPerEmail() {
+		return this.perEmail;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public void setPerEmail(String perEmail) {
+		this.perEmail = perEmail;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public Boolean getPerEstado() {
+		return this.perEstado;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setPerEstado(Boolean perEstado) {
+		this.perEstado = perEstado;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getPerNombre() {
+		return this.perNombre;
 	}
-	
-	public String getIdentificacion() {
-		return identificacion;
+
+	public void setPerNombre(String perNombre) {
+		this.perNombre = perNombre;
 	}
-	
-	public void setIdentificacion(String identificacion) {
-		this.identificacion = identificacion;
+
+	public Usuario getUsuario() {
+		return this.usuario;
 	}
-	
-	public Docente getDocente() {
-		return docente;
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
-	
-	public void setDocente(Docente docente) {
-		this.docente = docente;
-	}
-	
 
 }
