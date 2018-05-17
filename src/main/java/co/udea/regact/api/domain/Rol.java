@@ -2,12 +2,15 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
-
+/**
+ * The persistent class for the roles database table.
+ * 
+ */
 @Entity
-@Table(name="\"ROLES\"")
+@Table(name="roles")
+@NamedQuery(name="Rol.findAll", query="SELECT r FROM Rol r")
 public class Rol implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,9 +21,6 @@ public class Rol implements Serializable {
 
 	@Column(name="rol_nombre")
 	private String rolNombre;
-
-	@ManyToMany(mappedBy="roles")
-	private List<Usuario> usuarios;
 
 	public Rol() {
 	}
@@ -39,14 +39,6 @@ public class Rol implements Serializable {
 
 	public void setRolNombre(String rolNombre) {
 		this.rolNombre = rolNombre;
-	}
-
-	public List<Usuario> getUsuarios() {
-		return this.usuarios;
-	}
-
-	public void setUsuarios(List<Usuario> usuarios) {
-		this.usuarios = usuarios;
 	}
 
 }

@@ -2,11 +2,19 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 
+/**
+ * The persistent class for the actividades database table.
+ * 
+ */
 @Entity
-@Table(name="\"ACTIVIDADES\"")
+@Table(name="actividades")
+@NamedQuery(name="Actividad.findAll", query="SELECT a FROM Actividad a")
 public class Actividad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +26,12 @@ public class Actividad implements Serializable {
 	@Column(name="act_descripcion")
 	private String actDescripcion;
 
+	@Column(name="act_nombre")
+	private String actNombre;
+
+	//bi-directional many-to-one association to ReporteActividad
 	@OneToMany(mappedBy="actividade")
+	@JsonManagedReference
 	private List<ReporteActividad> reporteActividades;
 
 	public Actividad() {
@@ -38,6 +51,14 @@ public class Actividad implements Serializable {
 
 	public void setActDescripcion(String actDescripcion) {
 		this.actDescripcion = actDescripcion;
+	}
+
+	public String getActNombre() {
+		return this.actNombre;
+	}
+
+	public void setActNombre(String actNombre) {
+		this.actNombre = actNombre;
 	}
 
 	public List<ReporteActividad> getReporteActividades() {

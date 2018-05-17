@@ -2,11 +2,20 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 
+/**
+ * The persistent class for the cursos database table.
+ * 
+ */
 @Entity
-@Table(name="\"CURSOS\"")
+@Table(name="cursos")
+@NamedQuery(name="Curso.findAll", query="SELECT c FROM Curso c")
 public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -15,17 +24,24 @@ public class Curso implements Serializable {
 	@Column(name="cur_id")
 	private Integer curId;
 
-	@Column(name="cur_estado")
-	private Boolean curEstado;
+	@Column(name="cur_hpracticas")
+	private Integer curHpracticas;
 
-	@Column(name="cur_horas")
-	private Integer curHoras;
+	@Column(name="cur_hteoricas")
+	private Integer curHteoricas;
 
 	@Column(name="cur_nombre")
 	private String curNombre;
 
+	//bi-directional many-to-one association to Estado
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="est_id")
+	@JsonBackReference
+	private Estado estado;
+
 	//bi-directional many-to-one association to Grupo
 	@OneToMany(mappedBy="curso")
+	@JsonManagedReference
 	private List<Grupo> grupos;
 
 	public Curso() {
@@ -39,20 +55,20 @@ public class Curso implements Serializable {
 		this.curId = curId;
 	}
 
-	public Boolean getCurEstado() {
-		return this.curEstado;
+	public Integer getCurHpracticas() {
+		return this.curHpracticas;
 	}
 
-	public void setCurEstado(Boolean curEstado) {
-		this.curEstado = curEstado;
+	public void setCurHpracticas(Integer curHpracticas) {
+		this.curHpracticas = curHpracticas;
 	}
 
-	public Integer getCurHoras() {
-		return this.curHoras;
+	public Integer getCurHteoricas() {
+		return this.curHteoricas;
 	}
 
-	public void setCurHoras(Integer curHoras) {
-		this.curHoras = curHoras;
+	public void setCurHteoricas(Integer curHteoricas) {
+		this.curHteoricas = curHteoricas;
 	}
 
 	public String getCurNombre() {
@@ -61,6 +77,14 @@ public class Curso implements Serializable {
 
 	public void setCurNombre(String curNombre) {
 		this.curNombre = curNombre;
+	}
+
+	public Estado getEstado() {
+		return this.estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 	public List<Grupo> getGrupos() {

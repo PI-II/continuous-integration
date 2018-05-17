@@ -4,7 +4,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: tourofheroes-api
+    name: regact-api
   messages:
     basename: bundles/languageBundle
 

@@ -2,15 +2,26 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.Date;
 
+
+/**
+ * The persistent class for the reporte_actividades database table.
+ * 
+ */
 @Entity
-@Table(name="\"REPORTE_ACTIVIDADES\"")
+@Table(name="reporte_actividades")
+@NamedQuery(name="ReporteActividad.findAll", query="SELECT r FROM ReporteActividad r")
 public class ReporteActividad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
-	private ReporteActividadPK id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="rep_id")
+	private Long repId;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="rep_fecha")
@@ -22,31 +33,49 @@ public class ReporteActividad implements Serializable {
 	@Column(name="rep_observaciones")
 	private String repObservaciones;
 
+	//bi-directional many-to-one association to Actividad
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="act_id", insertable=false, updatable=false)
+	@JsonBackReference
+	@JoinColumn(name="act_id", insertable = false, updatable = false, nullable = false)
 	private Actividad actividade;
 
+	//bi-directional many-to-one association to Docente
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="doce_id", insertable=false, updatable=false)
+	@JsonBackReference
+	@JoinColumn(name="doce_id", insertable = false, updatable = false, nullable = false)
 	private Docente docente;
 
+	//bi-directional many-to-one association to Grupo
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="gru_id", insertable=false, updatable=false)
+	@JsonBackReference
+	@JoinColumn(name="gru_id", insertable = false, updatable = false, nullable = false)
 	private Grupo grupo;
 
+	//bi-directional many-to-one association to Grupoxdocente
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="sem_id", insertable=false, updatable=false)
+	@JsonBackReference
+	@JoinColumns({
+		@JoinColumn(name="doce_id", referencedColumnName="id_docente"),
+		@JoinColumn(name="gru_id", referencedColumnName="id_grupo"),
+		@JoinColumn(name="sem_id", referencedColumnName="id_semestre")
+		})
+	private Grupoxdocente gruposxdocente;
+
+	//bi-directional many-to-one association to Semestre
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonBackReference
+	@JoinColumn(name="sem_id", insertable = false, updatable = false, nullable = false)
 	private Semestre semestre;
 
 	public ReporteActividad() {
 	}
 
-	public ReporteActividadPK getId() {
-		return this.id;
+	public Long getRepId() {
+		return this.repId;
 	}
 
-	public void setId(ReporteActividadPK id) {
-		this.id = id;
+	public void setRepId(Long repId) {
+		this.repId = repId;
 	}
 
 	public Date getRepFecha() {
@@ -95,6 +124,14 @@ public class ReporteActividad implements Serializable {
 
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
+	}
+
+	public Grupoxdocente getGruposxdocente() {
+		return this.gruposxdocente;
+	}
+
+	public void setGruposxdocente(Grupoxdocente gruposxdocente) {
+		this.gruposxdocente = gruposxdocente;
 	}
 
 	public Semestre getSemestre() {
