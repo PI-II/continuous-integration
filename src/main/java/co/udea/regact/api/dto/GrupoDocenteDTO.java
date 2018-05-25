@@ -9,8 +9,10 @@ public class GrupoDocenteDTO implements Serializable{
 	
 	private int idDocente;
 	private int idGrupo;
-	private String nombreGrupo;
 	private int idCurso;
+	private int idSemestre;
+	private String nombreGrupo;
+
 	private String nombreCurso;
 	private int angioSemestre;
 	private int semestre;
@@ -94,7 +96,12 @@ public class GrupoDocenteDTO implements Serializable{
 		this.estadoGrupo = estadoGrupo;
 	}
 	
-	
+	public int getIdSemestre() {
+		return idSemestre;
+	}
+	public void setIdSemestre(int idSemestre) {
+		this.idSemestre = idSemestre;
+	}
 	
 
 }

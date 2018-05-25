@@ -16,6 +16,19 @@ import java.util.List;
 @Entity
 @Table(name="gruposxdocentes")
 @NamedQuery(name="Grupoxdocente.findAll", query="SELECT g FROM Grupoxdocente g")
+@NamedEntityGraph(name="grupos.docente.estado",
+				attributeNodes= {
+						@NamedAttributeNode(value="grupo", subgraph="curso"),
+						@NamedAttributeNode(value="semestre", subgraph="semestre")
+						//,@NamedAttributeNode(value="semestre.estado", subgraph="mestre.estado")
+						},
+				subgraphs= {
+						@NamedSubgraph(name="curso", attributeNodes = @NamedAttributeNode("curso")),
+						@NamedSubgraph(name="semestre", attributeNodes = @NamedAttributeNode("estado"))
+						//,@NamedSubgraph(name="semestre.estado", attributeNodes= @NamedAttributeNode("estado"))
+						
+}
+)
 public class Grupoxdocente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -26,19 +39,19 @@ public class Grupoxdocente implements Serializable {
 	private Integer gdteHoras;
 
 	//bi-directional many-to-one association to Docente
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
 	@JoinColumn(name="id_docente", insertable = false, updatable = false, nullable = false)
 	private Docente docente;
 
 	//bi-directional many-to-one association to Grupo
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
 	@JoinColumn(name="id_grupo", insertable = false, updatable = false, nullable = false)
 	private Grupo grupo;
 
 	//bi-directional many-to-one association to Semestre
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
 	@JoinColumn(name="id_semestre", insertable = false, updatable = false, nullable = false)
 	private Semestre semestre;

@@ -45,6 +45,7 @@ public class GrupoDocenteAdapterImpl extends IGrupoDocenteAdapter {
 		dto.setNombreGrupo(entidad.getGrupo().getGruNombre());
 		dto.setIdGrupo(entidad.getGrupo().getGruId());
 		dto.setSemestre(entidad.getSemestre().getSemSemestre());
+		dto.setIdSemestre(entidad.getSemestre().getSemId());
 		
 		return dto;
 	}

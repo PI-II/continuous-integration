@@ -7,4 +7,5 @@ public class AdapterException extends GeneralException{
 	public AdapterException(String message) {
 		super(message);
 	}
+	
 }

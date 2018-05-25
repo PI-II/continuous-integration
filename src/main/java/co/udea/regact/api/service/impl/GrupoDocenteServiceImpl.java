@@ -22,7 +22,7 @@ public class GrupoDocenteServiceImpl implements GrupoDocenteService {
 	public List<Grupoxdocente> getGruposActivosByDocenteId(Integer idDocente) {
 
 		List<Grupoxdocente> gruposDocente = repository
-				.findByIdIdDocenteAndSemestreEstadoEstNombreEquals(idDocente, Constants.ESTADO_ACTIVO.getValue());
+				.getByDocenteDoceIdAndSemestreEstadoEstNombreEquals(idDocente, Constants.ESTADO_ACTIVO.getValue());
 		
 		return gruposDocente;
 	}
