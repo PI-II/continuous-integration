@@ -1,17 +1,15 @@
 package co.udea.regact.api.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import co.udea.regact.api.adapter.GrupoDocenteAdapterImpl;
 import co.udea.regact.api.domain.Grupoxdocente;
-import co.udea.regact.api.dto.GrupoDocenteDTO;
 import co.udea.regact.api.repository.GrupoDocenteRepository;
 import co.udea.regact.api.service.GrupoDocenteService;
+import co.udea.regact.api.util.Constants;
 
 @Service
 @Qualifier("GrupoDocenteServiceImpl")
@@ -21,19 +19,21 @@ public class GrupoDocenteServiceImpl implements GrupoDocenteService {
 	private GrupoDocenteRepository repository; 
 
 	@Override
-	public List<GrupoDocenteDTO> getGruposActivosByDocenteId(Integer idDocente, String estado) {
+	public List<Grupoxdocente> getGruposActivosByDocenteId(Integer idDocente) {
+
+		List<Grupoxdocente> gruposDocente = repository
+				.findByIdIdDocenteAndSemestreEstadoEstNombreEquals(idDocente, Constants.ESTADO_ACTIVO.getValue());
 		
-		List<GrupoDocenteDTO> results = new ArrayList<>();
+		return gruposDocente;
+	}
+
+	@Override
+	public List<Grupoxdocente> getGruposByDocenteIdAndEstado(Integer idDocente, String estado) {
+
 		estado = estado.toUpperCase();
 		List<Grupoxdocente> gruposDocente = repository.findByIdIdDocenteAndSemestreEstadoEstNombreEquals(idDocente, estado);
 		
-		GrupoDocenteAdapterImpl adapter;
-		for (Grupoxdocente grupoxdocente : gruposDocente) {
-			adapter = new GrupoDocenteAdapterImpl(grupoxdocente);
-			results.add(adapter.getGrupoDocenteDTO());
-		}
-		
-		return results;
+		return gruposDocente;
 	}
 
 }
