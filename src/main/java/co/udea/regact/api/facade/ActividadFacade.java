@@ -24,11 +24,9 @@ public class ActividadFacade {
 		
 		Set<GenericDto> actividades = new HashSet<GenericDto>();
 		Set<Actividad> entityActividades = service.getAllActividades();
-		ActividadAdapter adapter;
-		for (Actividad actividad : entityActividades) {
-			adapter = new ActividadAdapter(actividad);
-			actividades.add(adapter.getDto());
-		}
+		entityActividades.stream().forEach(f -> {
+			actividades.add(new ActividadAdapter(f).getDto());
+		});
 		
 		return actividades;
 		

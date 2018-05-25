@@ -23,13 +23,10 @@ public class GrupoDocenteFacade {
 		
 		List<GrupoDocenteDTO> grupos = new ArrayList<>();
 		List<Grupoxdocente> gruposEntities = service.getGruposActivosByDocenteId(idDocente);
-		
-		GrupoDocenteAdapterImpl adapter;
-		for (Grupoxdocente grupoxdocente : gruposEntities) {
-			adapter = new GrupoDocenteAdapterImpl(grupoxdocente);
-			grupos.add(adapter.getGrupoDocenteDTO());
-		}
-		
+
+		gruposEntities.stream().forEach(e -> {
+			grupos.add(new GrupoDocenteAdapterImpl(e).getGrupoDocenteDTO());
+		});
 		return grupos;
 	}
 	
