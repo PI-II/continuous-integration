@@ -7,6 +7,7 @@ import java.util.Set;
 import org.apache.tomcat.jni.Time;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,25 +15,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.udea.regact.api.dto.RegistroActividadDto;
+import co.udea.regact.api.dto.ReporteActividadDto;
+import co.udea.regact.api.facade.RegistroActividadFacade;
 
 @RestController
 @RequestMapping("/reporte")
-public class RegistroActividadController {
-	
-	private static Logger log = LoggerFactory.getLogger(RegistroActividadController.class);
-	
-	@PostMapping(value = "registrar", consumes = "application/json")
-	public void registrarActividad(@RequestBody RegistroActividadDto registro) {
-		
-		
+public class ReporteActividadController {
+
+	private static Logger log = LoggerFactory.getLogger(ReporteActividadController.class);
+
+	@Autowired
+	private RegistroActividadFacade registroActividadFacade;
+
+	@PostMapping(value = "registrar")
+	public void registrarReporteActividad(@RequestBody ReporteActividadDto registroActividad) {
+
+		registroActividadFacade.registrarActividad(registroActividad);
 	}
-	
-	@GetMapping("consultarpordocente")
-	public Set<RegistroActividadDto> getRegActividadesByDocenteSemestreActivo(int idDocente){
-		Set<RegistroActividadDto> regs = new HashSet<>();
-		
-		RegistroActividadDto dto = new RegistroActividadDto();
+
+	@GetMapping("consultarsemestreactivo")
+	public Set<ReporteActividadDto> getReporteActividadesByDocenteSemestreActivo(int idDocente) {
+		Set<ReporteActividadDto> regs = new HashSet<>();
+
+		ReporteActividadDto dto = new ReporteActividadDto();
 		dto.setFechaReporte(new Date().toString());
 		dto.setHoras(5);
 		dto.setIdActividad(2);
@@ -43,11 +48,10 @@ public class RegistroActividadController {
 		dto.setNombreGrupo("G-001");
 		dto.setObservaciones("un mock de prueba");
 		dto.setSemestre("2018-1");
-		
-		
+
 		regs.add(dto);
-		dto = new RegistroActividadDto();
-		
+		dto = new ReporteActividadDto();
+
 		dto.setFechaReporte(new Date().toString());
 		dto.setHoras(5);
 		dto.setIdActividad(2);
@@ -58,12 +62,11 @@ public class RegistroActividadController {
 		dto.setNombreGrupo("G-001");
 		dto.setObservaciones("un mock de prueba 222");
 		dto.setSemestre("2018-1");
-		
+
 		regs.add(dto);
-		
+
 		return regs;
-		
+
 	}
-	
 
 }

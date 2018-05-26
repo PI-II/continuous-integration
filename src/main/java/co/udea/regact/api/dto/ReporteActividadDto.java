@@ -2,7 +2,7 @@ package co.udea.regact.api.dto;
 
 import java.io.Serializable;
 
-public class RegistroActividadDto implements Serializable{
+public class ReporteActividadDto implements Serializable{
 
 	/**
 	 * 
@@ -22,7 +22,7 @@ public class RegistroActividadDto implements Serializable{
 	
 	
 	
-	public RegistroActividadDto() {
+	public ReporteActividadDto() {
 		// TODO Auto-generated constructor stub
 	}
 

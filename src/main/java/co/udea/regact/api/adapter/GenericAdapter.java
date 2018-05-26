@@ -2,11 +2,13 @@ package co.udea.regact.api.adapter;
 
 import java.io.Serializable;
 
+import co.udea.regact.api.exception.AdapterException;
+
 public interface GenericAdapter<DTO extends Serializable,E> {
 	
 	
-	public abstract DTO getDto();
+	public  DTO getDto() throws AdapterException ;
 	
-	public abstract E getEntity();
+	public  E getEntity() throws AdapterException;
 
 }
