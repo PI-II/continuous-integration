@@ -1,6 +1,8 @@
 package co.udea.regact.api.dto;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ReporteActividadDto implements Serializable{
 
@@ -16,9 +18,11 @@ public class ReporteActividadDto implements Serializable{
 	private String semestre;
 	private int idActividad;
 	private String nombreActividad;
-	private String fechaReporte;
+	private Date fechaReporte;
 	private int horas;
 	private String observaciones;
+	private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	
 	
 	
 	
@@ -75,10 +79,10 @@ public class ReporteActividadDto implements Serializable{
 	}
 
 	public String getFechaReporte() {
-		return fechaReporte;
+		return sdf.format(fechaReporte);
 	}
 
-	public void setFechaReporte(String fechaReporte) {
+	public void setFechaReporte(Date fechaReporte) {
 		this.fechaReporte = fechaReporte;
 	}
 

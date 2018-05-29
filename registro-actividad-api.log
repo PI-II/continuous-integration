@@ -8859,3 +8859,258 @@ Consider defining a bean of type 'co.udea.regact.api.facade.RegistroActividadFac
 2018-05-25 19:46:27.173  INFO 11680 --- [RMI TCP Connection(2)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
 2018-05-25 19:46:27.173  INFO 11680 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2018-05-25 19:46:27.205  INFO 11680 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-26 17:53:21.510  INFO 17132 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on LAPTOP-INQS0385 with PID 17132 (C:\Users\OrvieSalgadoEspitia\git\regact-api\target\classes started by OrvieSalgadoEspitia in C:\Users\OrvieSalgadoEspitia\git\regact-api)
+2018-05-26 17:53:21.515  INFO 17132 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-26 17:53:21.568  INFO 17132 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5af3afd9: startup date [Sat May 26 17:53:21 COT 2018]; root of context hierarchy
+2018-05-28 20:55:31.461  INFO 6084 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on LAPTOP-INQS0385 with PID 6084 (C:\Users\OrvieSalgadoEspitia\git\regact-api\target\classes started by OrvieSalgadoEspitia in C:\Users\OrvieSalgadoEspitia\git\regact-api)
+2018-05-28 20:55:31.466  INFO 6084 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-28 20:55:31.552  INFO 6084 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5af3afd9: startup date [Mon May 28 20:55:31 COT 2018]; root of context hierarchy
+2018-05-28 20:55:34.237  INFO 6084 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-28 20:55:34.469  INFO 6084 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$697ab093] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-28 20:55:35.274  INFO 6084 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-28 20:55:35.298  INFO 6084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-28 20:55:35.310  INFO 6084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-05-28 20:55:36.392  INFO 6084 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-05-28 20:55:36.401  INFO 6084 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4858 ms
+2018-05-28 20:55:36.646  INFO 6084 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-28 20:55:36.650  INFO 6084 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-28 20:55:36.657  INFO 6084 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-28 20:55:36.658  INFO 6084 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-28 20:55:36.665  INFO 6084 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-28 20:55:36.665  INFO 6084 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-05-28 20:55:37.882  INFO 6084 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:55:37.904  INFO 6084 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-28 20:55:38.037  INFO 6084 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-28 20:55:38.042  INFO 6084 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-28 20:55:38.059  INFO 6084 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-28 20:55:38.132  INFO 6084 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-28 20:55:38.366  INFO 6084 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-05-28 20:55:38.704  INFO 6084 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-05-28 20:55:38.714  INFO 6084 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5416f8db
+2018-05-28 20:55:38.973  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.976  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.977  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.987  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.990  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.990  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.991  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.998  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:38.999  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:39.000  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:39.000  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:39.001  WARN 6084 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:55:39.823  INFO 6084 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-05-28 20:55:40.029  INFO 6084 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:55:40.590  WARN 6084 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reporteActividadController': Unsatisfied dependency expressed through field 'registroActividadFacade'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-05-28 20:55:40.598  INFO 6084 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:55:40.608  INFO 6084 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-28 20:55:40.654  INFO 6084 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-05-28 20:55:40.777 ERROR 6084 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field registroActividadFacade in co.udea.regact.api.controller.ReporteActividadController required a bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' in your configuration.
+
+2018-05-28 20:58:04.012  INFO 500 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on LAPTOP-INQS0385 with PID 500 (C:\Users\OrvieSalgadoEspitia\git\regact-api\target\classes started by OrvieSalgadoEspitia in C:\Users\OrvieSalgadoEspitia\git\regact-api)
+2018-05-28 20:58:04.016  INFO 500 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-28 20:58:04.074  INFO 500 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5af3afd9: startup date [Mon May 28 20:58:04 COT 2018]; root of context hierarchy
+2018-05-28 20:58:06.096  INFO 500 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-28 20:58:06.267  INFO 500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$17e20cb7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-28 20:58:06.734  INFO 500 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-28 20:58:06.747  INFO 500 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-28 20:58:06.748  INFO 500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-05-28 20:58:06.893  INFO 500 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-05-28 20:58:06.894  INFO 500 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2825 ms
+2018-05-28 20:58:07.145  INFO 500 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-28 20:58:07.149  INFO 500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-28 20:58:07.157  INFO 500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-28 20:58:07.158  INFO 500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-28 20:58:07.158  INFO 500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-28 20:58:07.158  INFO 500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-05-28 20:58:08.147  INFO 500 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:58:08.172  INFO 500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-28 20:58:08.324  INFO 500 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-28 20:58:08.326  INFO 500 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-28 20:58:08.343  INFO 500 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-28 20:58:08.407  INFO 500 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-28 20:58:08.702  INFO 500 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-05-28 20:58:08.898  INFO 500 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-05-28 20:58:08.907  INFO 500 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@798dad3d
+2018-05-28 20:58:09.162  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.167  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.167  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.177  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.177  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.178  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.178  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.186  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.186  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.187  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.187  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.188  WARN 500 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 20:58:09.949  INFO 500 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-05-28 20:58:10.122  INFO 500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:58:10.694  WARN 500 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reporteActividadController': Unsatisfied dependency expressed through field 'registroActividadFacade'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-05-28 20:58:10.702  INFO 500 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 20:58:10.711  INFO 500 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-28 20:58:10.746  INFO 500 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-05-28 20:58:10.852 ERROR 500 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field registroActividadFacade in co.udea.regact.api.controller.ReporteActividadController required a bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' in your configuration.
+
+2018-05-28 21:15:10.904  INFO 9764 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on LAPTOP-INQS0385 with PID 9764 (C:\Users\OrvieSalgadoEspitia\git\regact-api\target\classes started by OrvieSalgadoEspitia in C:\Users\OrvieSalgadoEspitia\git\regact-api)
+2018-05-28 21:15:10.908  INFO 9764 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-28 21:15:10.964  INFO 9764 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5af3afd9: startup date [Mon May 28 21:15:10 COT 2018]; root of context hierarchy
+2018-05-28 21:15:12.726  INFO 9764 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-28 21:15:12.877  INFO 9764 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$68798713] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-28 21:15:13.458  INFO 9764 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-28 21:15:13.487  INFO 9764 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-28 21:15:13.489  INFO 9764 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-05-28 21:15:13.749  INFO 9764 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-05-28 21:15:13.750  INFO 9764 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2792 ms
+2018-05-28 21:15:14.134  INFO 9764 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-28 21:15:14.139  INFO 9764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-28 21:15:14.151  INFO 9764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-28 21:15:14.151  INFO 9764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-28 21:15:14.152  INFO 9764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-28 21:15:14.153  INFO 9764 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-05-28 21:15:15.319  INFO 9764 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-28 21:15:15.340  INFO 9764 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-28 21:15:15.481  INFO 9764 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-28 21:15:15.483  INFO 9764 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-28 21:15:15.491  INFO 9764 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-28 21:15:15.571  INFO 9764 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-28 21:15:15.834  INFO 9764 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-05-28 21:15:16.114  INFO 9764 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-05-28 21:15:16.133  INFO 9764 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@72976b4
+2018-05-28 21:15:16.405  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.408  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.409  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.423  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.424  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.424  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.425  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.435  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.436  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.436  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.436  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:16.437  WARN 9764 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:15:17.210  INFO 9764 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-05-28 21:15:17.400  INFO 9764 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 21:15:17.917  WARN 9764 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reporteActividadController': Unsatisfied dependency expressed through field 'registroActividadFacade'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-05-28 21:15:17.925  INFO 9764 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 21:15:17.936  INFO 9764 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-05-28 21:15:17.977  INFO 9764 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-05-28 21:15:18.064 ERROR 9764 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field registroActividadFacade in co.udea.regact.api.controller.ReporteActividadController required a bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'co.udea.regact.api.facade.RegistroActividadFacade' in your configuration.
+
+2018-05-28 21:16:31.381  INFO 2172 --- [main] .u.r.a.RegistroActividadesApiApplication : Starting RegistroActividadesApiApplication on LAPTOP-INQS0385 with PID 2172 (C:\Users\OrvieSalgadoEspitia\git\regact-api\target\classes started by OrvieSalgadoEspitia in C:\Users\OrvieSalgadoEspitia\git\regact-api)
+2018-05-28 21:16:31.385  INFO 2172 --- [main] .u.r.a.RegistroActividadesApiApplication : The following profiles are active: dev
+2018-05-28 21:16:31.449  INFO 2172 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5af3afd9: startup date [Mon May 28 21:16:31 COT 2018]; root of context hierarchy
+2018-05-28 21:16:33.003  INFO 2172 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-05-28 21:16:33.159  INFO 2172 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1e821232] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-05-28 21:16:33.639  INFO 2172 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2018-05-28 21:16:33.656  INFO 2172 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-05-28 21:16:33.657  INFO 2172 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-05-28 21:16:33.859  INFO 2172 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring embedded WebApplicationContext
+2018-05-28 21:16:33.860  INFO 2172 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2415 ms
+2018-05-28 21:16:34.126  INFO 2172 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-05-28 21:16:34.134  INFO 2172 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-05-28 21:16:34.144  INFO 2172 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-05-28 21:16:34.144  INFO 2172 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-05-28 21:16:34.144  INFO 2172 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-05-28 21:16:34.144  INFO 2172 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'CORSFilter' to: [/*]
+2018-05-28 21:16:35.427  INFO 2172 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-05-28 21:16:35.463  INFO 2172 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-05-28 21:16:35.582  INFO 2172 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-05-28 21:16:35.584  INFO 2172 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-05-28 21:16:35.593  INFO 2172 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-05-28 21:16:35.653  INFO 2172 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-05-28 21:16:35.891  INFO 2172 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2018-05-28 21:16:36.116  INFO 2172 --- [main] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2018-05-28 21:16:36.138  INFO 2172 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@696db620
+2018-05-28 21:16:36.409  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.413  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.413  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.431  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.432  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.432  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.432  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.440  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.441  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.441  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.441  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:36.442  WARN 2172 --- [main] org.hibernate.orm.deprecation            : HHH90000014: Found use of deprecated [org.hibernate.id.SequenceGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-05-28 21:16:37.176  INFO 2172 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-05-28 21:16:37.361  INFO 2172 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-05-28 21:16:38.361  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/actividad/todas],methods=[GET]}" onto public java.util.Set<co.udea.regact.api.dto.GenericDto> co.udea.regact.api.controller.ActividadController.getActividades()
+2018-05-28 21:16:38.372  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/grupodocente/activos],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.GrupoDocenteDTO> co.udea.regact.api.controller.GrupoDocenteController.getGruposActivosDocente(java.lang.Integer)
+2018-05-28 21:16:38.374  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reporte/consultarsemestreactivo],methods=[GET]}" onto public java.util.Set<co.udea.regact.api.dto.ReporteActividadDto> co.udea.regact.api.controller.ReporteActividadController.getReporteActividadesByDocenteSemestreActivo(int)
+2018-05-28 21:16:38.381  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reporte/registrar],methods=[POST]}" onto public void co.udea.regact.api.controller.ReporteActividadController.registrarReporteActividad(co.udea.regact.api.dto.ReporteActividadDto)
+2018-05-28 21:16:38.382  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/consultarPorMailEstado]}" onto public co.udea.regact.api.domain.Usuario co.udea.regact.api.controller.UsuarioController.getUsuarioByMailEstado(java.lang.String,java.lang.String)
+2018-05-28 21:16:38.394  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-05-28 21:16:38.395  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-05-28 21:16:38.396  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-05-28 21:16:38.398  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-05-28 21:16:38.407  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-05-28 21:16:38.646  INFO 2172 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-05-28 21:16:38.975  INFO 2172 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5af3afd9: startup date [Mon May 28 21:16:31 COT 2018]; root of context hierarchy
+2018-05-28 21:16:39.052  INFO 2172 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-28 21:16:39.053  INFO 2172 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-28 21:16:39.111  INFO 2172 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-05-28 21:16:39.534  INFO 2172 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-05-28 21:16:39.550  INFO 2172 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-05-28 21:16:39.557  INFO 2172 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-05-28 21:16:39.896  INFO 2172 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-05-28 21:16:39.968  INFO 2172 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-05-28 21:16:40.597  INFO 2172 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2018-05-28 21:16:40.624  INFO 2172 --- [main] .u.r.a.RegistroActividadesApiApplication : Started RegistroActividadesApiApplication in 9.675 seconds (JVM running for 10.92)
+2018-05-28 21:17:22.695  INFO 2172 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/regactapi]     : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-05-28 21:17:22.709  INFO 2172 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-05-28 21:17:22.740  INFO 2172 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms

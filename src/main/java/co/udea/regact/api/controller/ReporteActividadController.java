@@ -38,7 +38,7 @@ public class ReporteActividadController {
 		Set<ReporteActividadDto> regs = new HashSet<>();
 
 		ReporteActividadDto dto = new ReporteActividadDto();
-		dto.setFechaReporte(new Date().toString());
+		dto.setFechaReporte(new Date());
 		dto.setHoras(5);
 		dto.setIdActividad(2);
 		dto.setIdDocente(1);
@@ -52,7 +52,7 @@ public class ReporteActividadController {
 		regs.add(dto);
 		dto = new ReporteActividadDto();
 
-		dto.setFechaReporte(new Date().toString());
+		dto.setFechaReporte(new Date());
 		dto.setHoras(5);
 		dto.setIdActividad(2);
 		dto.setIdDocente(1);
