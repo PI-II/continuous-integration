@@ -1,6 +1,7 @@
 package co.udea.regact.api.dto;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -80,6 +81,10 @@ public class ReporteActividadDto implements Serializable{
 
 	public String getFechaReporte() {
 		return sdf.format(fechaReporte);
+	}
+	
+	public Date getFechaReporteEntidad() throws ParseException {
+		return sdf.parse(getFechaReporte());
 	}
 
 	public void setFechaReporte(Date fechaReporte) {

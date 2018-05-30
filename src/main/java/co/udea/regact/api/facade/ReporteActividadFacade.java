@@ -1,14 +1,18 @@
 package co.udea.regact.api.facade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.udea.regact.api.adapter.ReporteActividadAdapter;
+import co.udea.regact.api.domain.ReporteActividad;
 import co.udea.regact.api.dto.ReporteActividadDto;
 import co.udea.regact.api.service.RegistroActividadService;
 
 @Service
-public class RegistroActividadFacade {
+public class ReporteActividadFacade {
 	
 	@Autowired
 	private RegistroActividadService regActService;
@@ -22,6 +26,19 @@ public class RegistroActividadFacade {
 		
 		regActService.registrarActividad(adapter.getEntity());
 		
+		
+	}
+	
+	public List<ReporteActividadDto> getAllByDocenteSemestreActivo(Integer idDocente){
+		
+		List<ReporteActividadDto> response = new ArrayList<>();
+		List<ReporteActividad> consulta = regActService.getAllByDocenteSemestreActivo(idDocente);
+		
+		consulta.stream().forEach(r -> {
+			response.add(new ReporteActividadAdapter(r).getDto());	
+		});
+		
+		return response;
 		
 	}
 	

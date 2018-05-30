@@ -27,6 +27,7 @@ public class GrupoDocenteFacade {
 		gruposEntities.stream().forEach(e -> {
 			grupos.add(new GrupoDocenteAdapterImpl(e).getGrupoDocenteDTO());
 		});
+		
 		return grupos;
 	}
 	

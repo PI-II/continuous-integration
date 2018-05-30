@@ -3,6 +3,8 @@ package co.udea.regact.api.domain;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.apache.commons.collections.functors.FalsePredicate;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.util.Date;
@@ -15,6 +17,20 @@ import java.util.Date;
 @Entity
 @Table(name="reporte_actividades")
 @NamedQuery(name="ReporteActividad.findAll", query="SELECT r FROM ReporteActividad r")
+@NamedEntityGraph(name="findDocenteReport", 
+							attributeNodes= {
+									@NamedAttributeNode(value="actividade"),
+									@NamedAttributeNode(value="docente"),
+									@NamedAttributeNode(value="grupo", subgraph="curso"),
+									@NamedAttributeNode(value="semestre", subgraph="semestre")
+									//,@NamedAttributeNode(value="semestre.estado", subgraph="mestre.estado")
+									},
+							subgraphs= {
+									@NamedSubgraph(name="curso", attributeNodes = @NamedAttributeNode("curso")),
+									@NamedSubgraph(name="semestre", attributeNodes = @NamedAttributeNode("estado"))
+									
+							}
+)
 public class ReporteActividad implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -22,6 +38,19 @@ public class ReporteActividad implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="rep_id")
 	private Long repId;
+	
+	@Column(name="act_id", insertable=true, updatable=false)
+	private Integer idActividad;
+	
+	@Column(name="doce_id", insertable=true, updatable=false)
+	private Integer idDocente;
+	
+	@Column(name="gru_id", insertable=true, updatable=false)
+	private Integer idGrupo;
+	
+	//, nullable=false, insertable=false, updatable=false
+	@Column(name="sem_id", insertable=true, updatable=false)
+	private Integer idSemestre;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="rep_fecha")
@@ -36,28 +65,28 @@ public class ReporteActividad implements Serializable {
 	//bi-directional many-to-one association to Actividad
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
-	@JoinColumn(name="act_id", insertable = false, updatable = false, nullable = false)
+	@JoinColumn(name="act_id", insertable = false, updatable = false)
 	private Actividad actividade;
 
 	//bi-directional many-to-one association to Docente
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
-	@JoinColumn(name="doce_id", insertable = false, updatable = false, nullable = false)
+	@JoinColumn(name="doce_id", insertable = false, updatable = false)
 	private Docente docente;
 
 	//bi-directional many-to-one association to Grupo
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
-	@JoinColumn(name="gru_id", insertable = false, updatable = false, nullable = false)
+	@JoinColumn(name="gru_id", insertable = false, updatable = false)
 	private Grupo grupo;
 
 	//bi-directional many-to-one association to Grupoxdocente
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonBackReference
 	@JoinColumns({
-		@JoinColumn(name="doce_id", referencedColumnName="id_docente"),
-		@JoinColumn(name="gru_id", referencedColumnName="id_grupo"),
-		@JoinColumn(name="sem_id", referencedColumnName="id_semestre")
+		@JoinColumn(name="doce_id", referencedColumnName="id_docente", insertable = false, updatable = false),
+		@JoinColumn(name="gru_id", referencedColumnName="id_grupo", insertable = false, updatable = false),
+		@JoinColumn(name="sem_id", referencedColumnName="id_semestre", insertable = false, updatable = false)
 		})
 	private Grupoxdocente gruposxdocente;
 
@@ -140,6 +169,38 @@ public class ReporteActividad implements Serializable {
 
 	public void setSemestre(Semestre semestre) {
 		this.semestre = semestre;
+	}
+
+	public Integer getAct_id() {
+		return idActividad;
+	}
+
+	public void setAct_id(Integer act_id) {
+		this.idActividad = act_id;
+	}
+
+	public Integer getDoce_id() {
+		return idDocente;
+	}
+
+	public void setDoce_id(Integer doce_id) {
+		this.idDocente = doce_id;
+	}
+
+	public Integer getGru_id() {
+		return idGrupo;
+	}
+
+	public void setGru_id(Integer gru_id) {
+		this.idGrupo = gru_id;
+	}
+
+	public Integer getSem_id() {
+		return idSemestre;
+	}
+
+	public void setSem_id(Integer sem_id) {
+		this.idSemestre = sem_id;
 	}
 
 }

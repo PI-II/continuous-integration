@@ -1,5 +1,6 @@
 package co.udea.regact.api.adapter;
 
+import co.udea.regact.api.domain.Grupoxdocente;
 import co.udea.regact.api.domain.ReporteActividad;
 import co.udea.regact.api.dto.ReporteActividadDto;
 import co.udea.regact.api.exception.AdapterException;
@@ -47,6 +48,21 @@ public class ReporteActividadAdapter implements GenericAdapter<ReporteActividadD
 		if (dto == null) {
 			throw new AdapterException("exception.adapter.message");
 		}
+		
+		try {
+			entity = new ReporteActividad();
+			entity.setAct_id(dto.getIdActividad());
+			entity.setDoce_id(dto.getIdDocente());
+			entity.setGru_id(dto.getIdGrupo());
+			entity.setSem_id(dto.getIdSemestre());
+			entity.setRepFecha(dto.getFechaReporteEntidad());
+			entity.setRepHoras(dto.getHoras());
+			entity.setRepObservaciones(dto.getObservaciones());
+		
+		} catch (Exception e) {
+			throw new AdapterException("Adapter problems with entity: " + e.getMessage());
+		}
+
 		return entity;
 	}
 
