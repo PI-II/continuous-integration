@@ -18,4 +18,7 @@ public interface RegistroActividadRepository extends CrudRepository<ReporteActiv
 	@EntityGraph(value="findDocenteReport", type = EntityGraphType.LOAD)
 	public List<ReporteActividad> getByDocenteDoceIdAndSemestreEstadoEstNombre(Integer idDocente, String estado);
 
+	@EntityGraph(value="findDocenteReport", type = EntityGraphType.LOAD)
+	public List<ReporteActividad> getByGrupoGruIdAndSemestreEstadoEstNombre(Integer idGrupo, String estado);
+
 }

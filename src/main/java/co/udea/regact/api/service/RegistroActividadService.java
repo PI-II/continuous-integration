@@ -27,6 +27,11 @@ public class RegistroActividadService {
 	public List<ReporteActividad> getAllByDocenteSemestreActivo(Integer idDocente){
 		return regActRepository.getByDocenteDoceIdAndSemestreEstadoEstNombre(idDocente, Constants.ESTADO_ACTIVO.getValue());
 	}
+
+	public List<ReporteActividad> getAllByGrupoSemestreActivo(Integer idGrupo) {
+		// TODO Auto-generated method stub
+		return regActRepository.getByGrupoGruIdAndSemestreEstadoEstNombre(idGrupo, Constants.ESTADO_ACTIVO.getValue());
+	}
 	
 
 }

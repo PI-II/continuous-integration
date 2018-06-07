@@ -42,6 +42,17 @@ public class ReporteActividadFacade {
 		
 	}
 	
-	
+	public List<ReporteActividadDto> getAllByGrupoSemestreActivo(Integer idGrupo){
+		
+		List<ReporteActividadDto> response = new ArrayList<>();
+		List<ReporteActividad> consulta = regActService.getAllByGrupoSemestreActivo(idGrupo);
+		
+		consulta.stream().forEach(r -> {
+			response.add(new ReporteActividadAdapter(r).getDto());	
+		});
+		
+		return response;
+		
+	}
 
 }

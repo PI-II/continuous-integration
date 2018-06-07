@@ -22,7 +22,7 @@ public class GrupoDocenteController {
 	@Autowired
 	private GrupoDocenteFacade docenteFacade;
 	
-	@RequestMapping(value="activos", method=RequestMethod.GET)
+	@RequestMapping(value="getgruposactivos", method=RequestMethod.GET)
 	public List<GrupoDocenteDTO> getGruposActivosDocente(Integer idDocente){
 		log.debug("Obteniendo los grupos activos del docente ======");
 		List<GrupoDocenteDTO> grupos = docenteFacade.getGruposActivosByDocenteId(idDocente);

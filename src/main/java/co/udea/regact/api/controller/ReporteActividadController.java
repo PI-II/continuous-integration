@@ -38,37 +38,37 @@ public class ReporteActividadController {
 	@GetMapping("getregactbygrupo")
 	public List<ReporteActividadDto> getReporteActividadesByGrupoSemestreActivo(int idGrupo) {
 		
-		List<ReporteActividadDto> regs = new ArrayList<>();
-
-		ReporteActividadDto dto = new ReporteActividadDto();
-		dto.setFechaReporte(new Date());
-		dto.setHoras(5);
-		dto.setIdActividad(2);
-		dto.setIdDocente(1);
-		dto.setIdGrupo(1);
-		dto.setIdSemestre(1);
-		dto.setNombreActividad("Laboraorio");
-		dto.setNombreGrupo("G-001");
-		dto.setObservaciones("un mock de prueba");
-		dto.setSemestre("2018-1");
-
-		regs.add(dto);
-		dto = new ReporteActividadDto();
-
-		dto.setFechaReporte(new Date());
-		dto.setHoras(5);
-		dto.setIdActividad(2);
-		dto.setIdDocente(1);
-		dto.setIdGrupo(1);
-		dto.setIdSemestre(1);
-		dto.setNombreActividad("TALLER");
-		dto.setNombreGrupo("G-001");
-		dto.setObservaciones("un mock de prueba 222");
-		dto.setSemestre("2018-1");
-
-		regs.add(dto);
+//		List<ReporteActividadDto> regs = new ArrayList<>();
+//
+//		ReporteActividadDto dto = new ReporteActividadDto();
+//		dto.setFechaReporte(new Date());
+//		dto.setHoras(5);
+//		dto.setIdActividad(2);
+//		dto.setIdDocente(1);
+//		dto.setIdGrupo(1);
+//		dto.setIdSemestre(1);
+//		dto.setNombreActividad("Laboraorio");
+//		dto.setNombreGrupo("G-001");
+//		dto.setObservaciones("un mock de prueba");
+//		dto.setSemestre("2018-1");
+//
+//		regs.add(dto);
+//		dto = new ReporteActividadDto();
+//
+//		dto.setFechaReporte(new Date());
+//		dto.setHoras(5);
+//		dto.setIdActividad(2);
+//		dto.setIdDocente(1);
+//		dto.setIdGrupo(1);
+//		dto.setIdSemestre(1);
+//		dto.setNombreActividad("TALLER");
+//		dto.setNombreGrupo("G-001");
+//		dto.setObservaciones("un mock de prueba 222");
+//		dto.setSemestre("2018-1");
+//
+//		regs.add(dto);
 		
-		return regs;
+		return registroActividadFacade.getAllByGrupoSemestreActivo(idGrupo);
 	}
 
 	@GetMapping("getregactbydocente")
