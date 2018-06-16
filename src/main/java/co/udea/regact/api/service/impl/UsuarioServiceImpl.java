@@ -48,4 +48,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 		
 	}
 
+	@Override
+	public Usuario getUsuarioLogin(String email, String password) {
+		
+		Optional<Usuario> usuario = repository.findByUsuEmailAndUsuPasswordEquals(email, password);
+		
+		if(!usuario.isPresent()) {
+			throw new DataNotFoundException(messages.get("exception.data_not_found.usuario"));
+		}else {
+			return usuario.get();
+		}
+	}
+
 }

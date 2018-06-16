@@ -13,11 +13,17 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity
 @Table(name="usuarios")
 @NamedQuery(name="Usuario.findAll", query="SELECT u FROM Usuario u")
+@NamedEntityGraph(name="usuarios.consulta.login",
+				attributeNodes= {
+						@NamedAttributeNode(value="estado"),
+						@NamedAttributeNode(value="perfile"),
+						@NamedAttributeNode(value="persona")
+						})
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="usu_id")
 	private Integer usuId;
 
