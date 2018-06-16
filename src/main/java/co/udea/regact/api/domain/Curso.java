@@ -20,7 +20,7 @@ public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="cur_id")
 	private Integer curId;
 
@@ -32,10 +32,13 @@ public class Curso implements Serializable {
 
 	@Column(name="cur_nombre")
 	private String curNombre;
+	
+	@Column(name="est_id")
+	private int idEstado;
 
 	//bi-directional many-to-one association to Estado
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="est_id")
+	@JoinColumn(name="est_id", insertable = false, updatable = false)
 	@JsonBackReference
 	private Estado estado;
 
@@ -107,6 +110,14 @@ public class Curso implements Serializable {
 		grupo.setCurso(null);
 
 		return grupo;
+	}
+	
+	public int getIdEstado() {
+		return idEstado;
+	}
+	
+	public void setIdEstado(int idEstado) {
+		this.idEstado = idEstado;
 	}
 
 }

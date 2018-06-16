@@ -1,22 +1,18 @@
 package co.udea.regact.api.controller;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import co.udea.regact.api.domain.Curso;
-import co.udea.regact.api.domain.Usuario;
-import co.udea.regact.api.exception.DataNotFoundException;
-import co.udea.regact.api.service.UsuarioService;
-import co.udea.regact.api.util.Messages;
 
-import java.util.function.Predicate;
+import co.udea.regact.api.dto.CursoDto;
+import co.udea.regact.api.facade.CursoFacade;
+import co.udea.regact.api.util.Messages;
 
 @RestController
 @RequestMapping("/cursos")
@@ -28,7 +24,18 @@ public class CursoController {
     private Messages messages;
 
 	@Autowired
-	private UsuarioService usuarioService;
+	private CursoFacade cursoFacade;
+	
+	
+	@GetMapping("getAll")
+	public List<CursoDto> getCursos(){
+		log.debug("Getting cursos");
+		return cursoFacade.getAllCursos();
+	}
+	@PostMapping("addCurso")
+	public void addCurso(CursoDto curso) {
+		cursoFacade.setCurso(curso);
+	}
 
 
 //	@GetMapping("/consultarCursosActivosPorDocente")

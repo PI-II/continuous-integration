@@ -11,15 +11,15 @@ import co.udea.regact.api.dto.GenericDto;
 import co.udea.regact.api.facade.ActividadFacade;
 
 @RestController
-@RequestMapping("/actividad")
-public class ActividadController {
+@RequestMapping("/tipoactividad")
+public class TipoActividadController {
 	
 	@Autowired
 	private ActividadFacade facade;
 	
 	
-	@GetMapping("todas")
-	public Set<GenericDto> getActividades(){
+	@GetMapping("getAll")
+	public Set<GenericDto> getAllTipoActividades(){
 		return facade.getActividades();
 	}
 
