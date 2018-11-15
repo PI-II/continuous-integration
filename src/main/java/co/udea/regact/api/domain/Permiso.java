@@ -4,18 +4,26 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
+/**
+ * The persistent class for the permisos database table.
+ * 
+ */
 @Entity
-@Table(name="\"PERMISOS\"")
+@Table(name="permisos")
+@NamedQuery(name="Permiso.findAll", query="SELECT p FROM Permiso p")
 public class Permiso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="per_id")
 	private Integer perId;
 
 	@Column(name="per_descripcion")
 	private String perDescripcion;
+
+	@Column(name="per_nombre")
+	private String perNombre;
 
 	public Permiso() {
 	}
@@ -34,6 +42,14 @@ public class Permiso implements Serializable {
 
 	public void setPerDescripcion(String perDescripcion) {
 		this.perDescripcion = perDescripcion;
+	}
+
+	public String getPerNombre() {
+		return this.perNombre;
+	}
+
+	public void setPerNombre(String perNombre) {
+		this.perNombre = perNombre;
 	}
 
 }

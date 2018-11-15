@@ -2,29 +2,35 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
 
 
+/**
+ * The persistent class for the grupos database table.
+ * 
+ */
 @Entity
-@Table(name="\"GRUPOS\"")
+@Table(name="grupos")
+@NamedQuery(name="Grupo.findAll", query="SELECT g FROM Grupo g")
 public class Grupo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="gru_id")
 	private Integer gruId;
 
-	@Column(name="gru_cantidadestudiantes")
-	private Integer gruCantidadestudiantes;
+	@Column(name="gru_cant_estudiantes")
+	private Integer gruCantEstudiantes;
 
-	@Column(name="gru_diaclase")
-	private String gruDiaclase;
-
-	@Column(name="gru_estado")
-	private Boolean gruEstado;
+	@Column(name="gru_diasclase")
+	private String gruDiasclase;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="gru_fechafin")
@@ -34,32 +40,40 @@ public class Grupo implements Serializable {
 	@Column(name="gru_fechainicio")
 	private Date gruFechainicio;
 
-	@Column(name="gru_horarioclase")
-	private Time gruHorarioclase;
+	@Column(name="gru_horafinal")
+	private Time gruHorafinal;
+
+	@Column(name="gru_horainicial")
+	private Time gruHorainicial;
 
 	@Column(name="gru_nombre")
 	private String gruNombre;
 
-	@ManyToMany
-	@JoinTable(
-		name="\"DOCENTESXGRUPOS\""
-		, joinColumns={
-			@JoinColumn(name="gru_id")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="doce_id")
-			}
-		)
-	private List<Docente> docentes;
-
+	//bi-directional many-to-one association to Curso
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonBackReference
 	@JoinColumn(name="cur_id")
 	private Curso curso;
 
+	//bi-directional many-to-one association to Estado
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonBackReference
+	@JoinColumn(name="est_id")
+	private Estado estado;
+
+	//bi-directional many-to-one association to Grupoxdocente
 	@OneToMany(mappedBy="grupo")
+	@JsonManagedReference
+	private List<Grupoxdocente> gruposxdocentes;
+
+	//bi-directional many-to-one association to ReporteActividad
+	@OneToMany(mappedBy="grupo")
+	@JsonManagedReference
 	private List<ReporteActividad> reporteActividades;
 
+	//bi-directional many-to-many association to Semestre
 	@ManyToMany(mappedBy="grupos")
+	@JsonManagedReference
 	private List<Semestre> semestres;
 
 	public Grupo() {
@@ -73,28 +87,20 @@ public class Grupo implements Serializable {
 		this.gruId = gruId;
 	}
 
-	public Integer getGruCantidadestudiantes() {
-		return this.gruCantidadestudiantes;
+	public Integer getGruCantEstudiantes() {
+		return this.gruCantEstudiantes;
 	}
 
-	public void setGruCantidadestudiantes(Integer gruCantidadestudiantes) {
-		this.gruCantidadestudiantes = gruCantidadestudiantes;
+	public void setGruCantEstudiantes(Integer gruCantEstudiantes) {
+		this.gruCantEstudiantes = gruCantEstudiantes;
 	}
 
-	public String getGruDiaclase() {
-		return this.gruDiaclase;
+	public String getGruDiasclase() {
+		return this.gruDiasclase;
 	}
 
-	public void setGruDiaclase(String gruDiaclase) {
-		this.gruDiaclase = gruDiaclase;
-	}
-
-	public Boolean getGruEstado() {
-		return this.gruEstado;
-	}
-
-	public void setGruEstado(Boolean gruEstado) {
-		this.gruEstado = gruEstado;
+	public void setGruDiasclase(String gruDiasclase) {
+		this.gruDiasclase = gruDiasclase;
 	}
 
 	public Date getGruFechafin() {
@@ -113,12 +119,20 @@ public class Grupo implements Serializable {
 		this.gruFechainicio = gruFechainicio;
 	}
 
-	public Time getGruHorarioclase() {
-		return this.gruHorarioclase;
+	public Time getGruHorafinal() {
+		return this.gruHorafinal;
 	}
 
-	public void setGruHorarioclase(Time gruHorarioclase) {
-		this.gruHorarioclase = gruHorarioclase;
+	public void setGruHorafinal(Time gruHorafinal) {
+		this.gruHorafinal = gruHorafinal;
+	}
+
+	public Time getGruHorainicial() {
+		return this.gruHorainicial;
+	}
+
+	public void setGruHorainicial(Time gruHorainicial) {
+		this.gruHorainicial = gruHorainicial;
 	}
 
 	public String getGruNombre() {
@@ -129,20 +143,42 @@ public class Grupo implements Serializable {
 		this.gruNombre = gruNombre;
 	}
 
-	public List<Docente> getDocentes() {
-		return this.docentes;
-	}
-
-	public void setDocentes(List<Docente> docentes) {
-		this.docentes = docentes;
-	}
-
 	public Curso getCurso() {
 		return this.curso;
 	}
 
 	public void setCurso(Curso curso) {
 		this.curso = curso;
+	}
+
+	public Estado getEstado() {
+		return this.estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
+	}
+
+	public List<Grupoxdocente> getGruposxdocentes() {
+		return this.gruposxdocentes;
+	}
+
+	public void setGruposxdocentes(List<Grupoxdocente> gruposxdocentes) {
+		this.gruposxdocentes = gruposxdocentes;
+	}
+
+	public Grupoxdocente addGruposxdocente(Grupoxdocente gruposxdocente) {
+		getGruposxdocentes().add(gruposxdocente);
+		gruposxdocente.setGrupo(this);
+
+		return gruposxdocente;
+	}
+
+	public Grupoxdocente removeGruposxdocente(Grupoxdocente gruposxdocente) {
+		getGruposxdocentes().remove(gruposxdocente);
+		gruposxdocente.setGrupo(null);
+
+		return gruposxdocente;
 	}
 
 	public List<ReporteActividad> getReporteActividades() {

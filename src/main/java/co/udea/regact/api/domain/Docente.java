@@ -2,16 +2,25 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 
+/**
+ * The persistent class for the docentes database table.
+ * 
+ */
 @Entity
-@Table(name="\"DOCENTES\"")
+@Table(name="docentes")
+@NamedQuery(name="Docente.findAll", query="SELECT d FROM Docente d")
 public class Docente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="doce_id")
 	private Integer doceId;
 
@@ -24,14 +33,20 @@ public class Docente implements Serializable {
 	@Column(name="doce_titulo")
 	private String doceTitulo;
 
-	@OneToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="doce_id")
-	private Usuario usuario;
+	//bi-directional many-to-one association to Persona
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonBackReference
+	@JoinColumn(name="per_id")
+	private Persona persona;
 
-	@ManyToMany(mappedBy="docentes")
-	private List<Grupo> grupos;
-
+	//bi-directional many-to-one association to Grupoxdocente
 	@OneToMany(mappedBy="docente")
+	@JsonManagedReference
+	private List<Grupoxdocente> gruposxdocentes;
+
+	//bi-directional many-to-one association to ReporteActividad
+	@OneToMany(mappedBy="docente")
+	@JsonManagedReference
 	private List<ReporteActividad> reporteActividades;
 
 	public Docente() {
@@ -69,20 +84,34 @@ public class Docente implements Serializable {
 		this.doceTitulo = doceTitulo;
 	}
 
-	public Usuario getUsuario() {
-		return this.usuario;
+	public Persona getPersona() {
+		return this.persona;
 	}
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
-	public List<Grupo> getGrupos() {
-		return this.grupos;
+	public List<Grupoxdocente> getGruposxdocentes() {
+		return this.gruposxdocentes;
 	}
 
-	public void setGrupos(List<Grupo> grupos) {
-		this.grupos = grupos;
+	public void setGruposxdocentes(List<Grupoxdocente> gruposxdocentes) {
+		this.gruposxdocentes = gruposxdocentes;
+	}
+
+	public Grupoxdocente addGruposxdocente(Grupoxdocente gruposxdocente) {
+		getGruposxdocentes().add(gruposxdocente);
+		gruposxdocente.setDocente(this);
+
+		return gruposxdocente;
+	}
+
+	public Grupoxdocente removeGruposxdocente(Grupoxdocente gruposxdocente) {
+		getGruposxdocentes().remove(gruposxdocente);
+		gruposxdocente.setDocente(null);
+
+		return gruposxdocente;
 	}
 
 	public List<ReporteActividad> getReporteActividades() {

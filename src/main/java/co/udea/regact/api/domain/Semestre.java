@@ -2,17 +2,26 @@ package co.udea.regact.api.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.Date;
 import java.util.List;
 
 
+/**
+ * The persistent class for the semestres database table.
+ * 
+ */
 @Entity
-@Table(name="\"SEMESTRES\"")
+@Table(name="semestres")
+@NamedQuery(name="Semestre.findAll", query="SELECT s FROM Semestre s")
 public class Semestre implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="sem_id")
 	private Integer semId;
 
@@ -27,19 +36,33 @@ public class Semestre implements Serializable {
 	@Column(name="sem_fechainicio")
 	private Date semFechainicio;
 
-	@Column(name="sem_semestre")
-	private Boolean semSemestre;
+	@Column(name="sem_nombre")
+	private String semNombre;
 
+	@Column(name="sem_semestre")
+	private Integer semSemestre;
+
+	//bi-directional many-to-one association to Grupoxdocente
 	@OneToMany(mappedBy="semestre")
+	@JsonManagedReference
+	private List<Grupoxdocente> gruposxdocentes;
+
+	//bi-directional many-to-one association to ReporteActividad
+	@OneToMany(mappedBy="semestre")
+	@JsonManagedReference
 	private List<ReporteActividad> reporteActividades;
 
+	//bi-directional many-to-one association to Estado
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="est_id")
-	private EstadosSemestre estadosSemestre;
+	@JsonBackReference
+	private Estado estado;
 
+	//bi-directional many-to-many association to Grupo
 	@ManyToMany
+	@JsonBackReference
 	@JoinTable(
-		name="\"SEMESTRESXGRUPOS\""
+		name="semestresxgrupos"
 		, joinColumns={
 			@JoinColumn(name="sem_id")
 			}
@@ -84,12 +107,42 @@ public class Semestre implements Serializable {
 		this.semFechainicio = semFechainicio;
 	}
 
-	public Boolean getSemSemestre() {
+	public String getSemNombre() {
+		return this.semNombre;
+	}
+
+	public void setSemNombre(String semNombre) {
+		this.semNombre = semNombre;
+	}
+
+	public Integer getSemSemestre() {
 		return this.semSemestre;
 	}
 
-	public void setSemSemestre(Boolean semSemestre) {
+	public void setSemSemestre(Integer semSemestre) {
 		this.semSemestre = semSemestre;
+	}
+
+	public List<Grupoxdocente> getGruposxdocentes() {
+		return this.gruposxdocentes;
+	}
+
+	public void setGruposxdocentes(List<Grupoxdocente> gruposxdocentes) {
+		this.gruposxdocentes = gruposxdocentes;
+	}
+
+	public Grupoxdocente addGruposxdocente(Grupoxdocente gruposxdocente) {
+		getGruposxdocentes().add(gruposxdocente);
+		gruposxdocente.setSemestre(this);
+
+		return gruposxdocente;
+	}
+
+	public Grupoxdocente removeGruposxdocente(Grupoxdocente gruposxdocente) {
+		getGruposxdocentes().remove(gruposxdocente);
+		gruposxdocente.setSemestre(null);
+
+		return gruposxdocente;
 	}
 
 	public List<ReporteActividad> getReporteActividades() {
@@ -114,12 +167,12 @@ public class Semestre implements Serializable {
 		return reporteActividade;
 	}
 
-	public EstadosSemestre getEstadosSemestre() {
-		return this.estadosSemestre;
+	public Estado getEstado() {
+		return this.estado;
 	}
 
-	public void setEstadosSemestre(EstadosSemestre estadosSemestre) {
-		this.estadosSemestre = estadosSemestre;
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 
 	public List<Grupo> getGrupos() {
