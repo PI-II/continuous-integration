@@ -15315,3 +15315,185 @@ co.udea.regact.api.exception.DataNotFoundException: El usuario no existe
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_144]
 
+2018-11-17 15:38:57.887  INFO 29704 --- [main] co.udea.regact.api.CursoServiceImpTest   : Starting CursoServiceImpTest on lila with PID 29704 (started by orvie in /home/orvie/Documents/git-repository/pi2)
+2018-11-17 15:38:57.899  INFO 29704 --- [main] co.udea.regact.api.CursoServiceImpTest   : The following profiles are active: test
+2018-11-17 15:38:58.088  INFO 29704 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3bf01a01: startup date [Sat Nov 17 15:38:58 COT 2018]; root of context hierarchy
+2018-11-17 15:39:01.678  INFO 29704 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-11-17 15:39:01.865  INFO 29704 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1d3ece07] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-17 15:39:03.319  INFO 29704 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-17 15:39:03.364  INFO 29704 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-17 15:39:03.660  INFO 29704 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-17 15:39:03.664  INFO 29704 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-11-17 15:39:03.667  INFO 29704 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-11-17 15:39:03.748  INFO 29704 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-17 15:39:03.995  INFO 29704 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-11-17 15:39:05.354  INFO 29704 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-11-17 15:39:05.510  INFO 29704 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2018-11-17 15:39:05.525  INFO 29704 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-11-17 15:39:05.841  INFO 29704 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-17 15:39:07.373  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/getAll],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.CursoDto> co.udea.regact.api.controller.CursoController.getCursos()
+2018-11-17 15:39:07.381  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/cursos/addCurso],methods=[POST]}" onto public void co.udea.regact.api.controller.CursoController.addCurso(co.udea.regact.api.dto.CursoDto)
+2018-11-17 15:39:07.384  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/grupodocente/getgruposactivos],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.GrupoDocenteDTO> co.udea.regact.api.controller.GrupoDocenteController.getGruposActivosDocente(java.lang.Integer)
+2018-11-17 15:39:07.387  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reporte/registrar],methods=[POST]}" onto public void co.udea.regact.api.controller.ReporteActividadController.registrarReporteActividad(co.udea.regact.api.dto.ReporteActividadDto)
+2018-11-17 15:39:07.388  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reporte/getregactbygrupo],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.ReporteActividadDto> co.udea.regact.api.controller.ReporteActividadController.getReporteActividadesByGrupoSemestreActivo(int)
+2018-11-17 15:39:07.389  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reporte/getregactbydocente],methods=[GET]}" onto public java.util.List<co.udea.regact.api.dto.ReporteActividadDto> co.udea.regact.api.controller.ReporteActividadController.getReporteActividadesByDocenteSemestreActivo(int)
+2018-11-17 15:39:07.391  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/tipoactividad/getAll],methods=[GET]}" onto public java.util.Set<co.udea.regact.api.dto.GenericDto> co.udea.regact.api.controller.TipoActividadController.getAllTipoActividades()
+2018-11-17 15:39:07.393  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/usuarios/login],methods=[POST]}" onto public co.udea.regact.api.dto.UsuarioDto co.udea.regact.api.controller.UsuarioController.getUsuarioByMailEstado(java.lang.String,java.lang.String)
+2018-11-17 15:39:07.401  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-11-17 15:39:07.402  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-11-17 15:39:07.403  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-11-17 15:39:07.414  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-17 15:39:07.415  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-17 15:39:07.706  INFO 29704 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-11-17 15:39:08.609  INFO 29704 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3bf01a01: startup date [Sat Nov 17 15:38:58 COT 2018]; root of context hierarchy
+2018-11-17 15:39:08.726  INFO 29704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-17 15:39:08.727  INFO 29704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-17 15:39:08.799  INFO 29704 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-17 15:39:09.302  INFO 29704 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-11-17 15:39:09.305  INFO 29704 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-11-17 15:39:09.354  INFO 29704 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-11-17 15:39:09.441  INFO 29704 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-11-17 15:39:10.020  INFO 29704 --- [main] co.udea.regact.api.CursoServiceImpTest   : Started CursoServiceImpTest in 13.322 seconds (JVM running for 15.301)
+2018-11-17 15:39:10.196  WARN 29704 --- [main] o.dbunit.dataset.AbstractTableMetaData   : Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'H2' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+2018-11-17 15:39:10.208  WARN 29704 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [com.github.springtestdbunit.DbUnitTestExecutionListener@2f5c1332] to process 'before' execution of test method [public void co.udea.regact.api.CursoServiceImpTest.debeRetornoUnCursoPorSuCodigoExistosamente()] for test instance [co.udea.regact.api.CursoServiceImpTest@ec1b2e4]
+
+org.dbunit.dataset.NoSuchColumnException: CURSOS.CODIGO -  (Non-uppercase input column: codigo) in ColumnNameToIndexes cache map. Note that the map's column names are NOT case sensitive.
+	at org.dbunit.dataset.AbstractTableMetaData.getColumnIndex(AbstractTableMetaData.java:117) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractOperation.getOperationMetaData(AbstractOperation.java:89) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:143) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79) ~[dbunit-2.5.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.setupOrTeardown(DbUnitRunner.java:183) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.beforeTestMethod(DbUnitRunner.java:75) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitTestExecutionListener.beforeTestMethod(DbUnitTestExecutionListener.java:185) ~[spring-test-dbunit-1.3.0.jar:na]
+	at org.springframework.test.context.TestContextManager.beforeTestMethod(TestContextManager.java:269) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+
+2018-11-17 15:39:10.219  WARN 29704 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [com.github.springtestdbunit.DbUnitTestExecutionListener@2f5c1332] to process 'after' execution for test: method [public void co.udea.regact.api.CursoServiceImpTest.debeRetornoUnCursoPorSuCodigoExistosamente()], instance [co.udea.regact.api.CursoServiceImpTest@ec1b2e4], exception [org.dbunit.dataset.NoSuchColumnException: CURSOS.CODIGO -  (Non-uppercase input column: codigo) in ColumnNameToIndexes cache map. Note that the map's column names are NOT case sensitive.]
+
+org.dbunit.dataset.NoSuchColumnException: CURSOS.CODIGO -  (Non-uppercase input column: codigo) in ColumnNameToIndexes cache map. Note that the map's column names are NOT case sensitive.
+	at org.dbunit.dataset.AbstractTableMetaData.getColumnIndex(AbstractTableMetaData.java:117) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractOperation.getOperationMetaData(AbstractOperation.java:89) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:143) ~[dbunit-2.5.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.setupOrTeardown(DbUnitRunner.java:183) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.afterTestMethod(DbUnitRunner.java:92) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitTestExecutionListener.afterTestMethod(DbUnitTestExecutionListener.java:190) ~[spring-test-dbunit-1.3.0.jar:na]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:319) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+
+2018-11-17 15:39:10.278  WARN 29704 --- [main] o.dbunit.dataset.AbstractTableMetaData   : Potential problem found: The configured data type factory 'class org.dbunit.dataset.datatype.DefaultDataTypeFactory' might cause problems with the current database 'H2' (e.g. some datatypes may not be supported properly). In rare cases you might see this message because the list of supported database products is incomplete (list=[derby]). If so please request a java-class update via the forums.If you are using your own IDataTypeFactory extending DefaultDataTypeFactory, ensure that you override getValidDbProducts() to specify the supported database products.
+2018-11-17 15:39:10.279  WARN 29704 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [com.github.springtestdbunit.DbUnitTestExecutionListener@2f5c1332] to process 'before' execution of test method [public void co.udea.regact.api.CursoServiceImpTest.debeRetornErrorSiElCursoNoExiste()] for test instance [co.udea.regact.api.CursoServiceImpTest@2855a06e]
+
+org.dbunit.dataset.NoSuchColumnException: CURSOS.CODIGO -  (Non-uppercase input column: codigo) in ColumnNameToIndexes cache map. Note that the map's column names are NOT case sensitive.
+	at org.dbunit.dataset.AbstractTableMetaData.getColumnIndex(AbstractTableMetaData.java:117) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractOperation.getOperationMetaData(AbstractOperation.java:89) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:143) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.CompositeOperation.execute(CompositeOperation.java:79) ~[dbunit-2.5.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.setupOrTeardown(DbUnitRunner.java:183) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.beforeTestMethod(DbUnitRunner.java:75) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitTestExecutionListener.beforeTestMethod(DbUnitTestExecutionListener.java:185) ~[spring-test-dbunit-1.3.0.jar:na]
+	at org.springframework.test.context.TestContextManager.beforeTestMethod(TestContextManager.java:269) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:74) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+
+2018-11-17 15:39:10.284  WARN 29704 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [com.github.springtestdbunit.DbUnitTestExecutionListener@2f5c1332] to process 'after' execution for test: method [public void co.udea.regact.api.CursoServiceImpTest.debeRetornErrorSiElCursoNoExiste()], instance [co.udea.regact.api.CursoServiceImpTest@2855a06e], exception [org.dbunit.dataset.NoSuchColumnException: CURSOS.CODIGO -  (Non-uppercase input column: codigo) in ColumnNameToIndexes cache map. Note that the map's column names are NOT case sensitive.]
+
+org.dbunit.dataset.NoSuchColumnException: CURSOS.CODIGO -  (Non-uppercase input column: codigo) in ColumnNameToIndexes cache map. Note that the map's column names are NOT case sensitive.
+	at org.dbunit.dataset.AbstractTableMetaData.getColumnIndex(AbstractTableMetaData.java:117) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractOperation.getOperationMetaData(AbstractOperation.java:89) ~[dbunit-2.5.0.jar:na]
+	at org.dbunit.operation.AbstractBatchOperation.execute(AbstractBatchOperation.java:143) ~[dbunit-2.5.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.setupOrTeardown(DbUnitRunner.java:183) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitRunner.afterTestMethod(DbUnitRunner.java:92) ~[spring-test-dbunit-1.3.0.jar:na]
+	at com.github.springtestdbunit.DbUnitTestExecutionListener.afterTestMethod(DbUnitTestExecutionListener.java:190) ~[spring-test-dbunit-1.3.0.jar:na]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:319) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128) [surefire-junit4-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155) [surefire-booter-2.18.1.jar:2.18.1]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.18.1.jar:2.18.1]
+
+2018-11-17 15:39:10.304  INFO 29704 --- [Thread-4] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@3bf01a01: startup date [Sat Nov 17 15:38:58 COT 2018]; root of context hierarchy
+2018-11-17 15:39:10.312  INFO 29704 --- [Thread-4] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-11-17 15:39:10.521  INFO 29704 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-17 15:39:10.524  INFO 29704 --- [Thread-4] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-11-17 15:39:10.798  INFO 29704 --- [Thread-4] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
