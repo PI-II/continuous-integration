@@ -237,10 +237,6 @@
 						<groupId>org.jacoco</groupId>
 						<artifactId>jacoco-maven-plugin</artifactId>
 						<version>0.8.2</version>
-
-
-
-
 						<configuration>
 							<destFile>${sonar.jacoco.reportPath}</destFile>
 							<append>true</append>
