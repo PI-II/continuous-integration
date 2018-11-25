@@ -5,7 +5,7 @@
 
 	<groupId>co.udea.regact</groupId>
 	<artifactId>regact-api</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>registro-actividades-api</name>
