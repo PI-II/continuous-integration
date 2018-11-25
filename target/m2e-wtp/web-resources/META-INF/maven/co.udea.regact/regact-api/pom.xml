@@ -165,7 +165,8 @@
 				<configuration>
 					<url>http://localhost:8080/manager/text</url>
 					<server>tomcat-server</server>
-					<path>/regactapi3</path>
+					<path>/${project.artifactId}</path>
+					<update>true</update>
 				</configuration>
 			</plugin>
 			<plugin>
