@@ -189,12 +189,14 @@
 		<repository>
 			<id>internal</id>
 			<name>Internal repository of archiva</name>
-			<url>http://ci.oxypora.com:8081/repository/internal/</url>
+			<url>http://localhost:8081/repository/internal/</url>
+			<!-- <url>http://ci.oxypora.com:8081/repository/internal/</url> -->
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Archiva Managed Snapshot Repository</name>
-			<url>http://ci.oxypora.com:8081/repository/snapshots/</url>
+			<url>http://localhost:8081/repository/snapshots/</url>
+			<!-- <url>http://ci.oxypora.com:8081/repository/internal/</url> -->
 		</snapshotRepository>
 	</distributionManagement>
 
