@@ -15,6 +15,7 @@ public class CursoDto implements Serializable{
 	private int horasTotales;
 	private int idEstado;
 	private String estado;
+	private String estado_new;
 	
 	public CursoDto() {
 		// TODO Auto-generated constructor stub
@@ -62,7 +63,13 @@ public class CursoDto implements Serializable{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+	public String getEstado_new() {
+		return estado_new;
+	}
 	
+	public void setEstado_new(String estado_new) {
+		this.estado_new = estado_new;
+	}
 	
 
 }
